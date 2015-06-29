@@ -1,7 +1,9 @@
 define([
-    'libs/jquery'
+    'libs/jquery',
+    'modules/animate'
 ], function(
-    jQuery
+    jQuery,
+    animate
 ) {
     'use strict';
 
@@ -17,7 +19,7 @@ define([
         $(".content--interactive").html(template["index.html"]);
 
         $(window).ready(function() {
-            // Do canvasy stuff here I guess
+            animate.init();
         });
     }
 
