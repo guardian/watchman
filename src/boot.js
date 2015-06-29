@@ -1,6 +1,6 @@
 define([], function() {
     'use strict';
-
+    
     function addCSS(url) {
         var head = document.querySelector('head');
         var link = document.createElement('link');

@@ -3,16 +3,17 @@ module.exports = function(grunt) {
 
     var aws = grunt.file.readJSON('aws-keys.json');
     var options = grunt.file.readJSON('options.json');
+    var template = "fail";
 
     grunt.initConfig({
         watch: {
             local: {
-                files: ['src/css/**/*.scss', 'src/index.html', 'src/js/**/*.js'],
-                tasks: ['sass', 'autoprefixer', 'cssmin', 'hash', 'copy', 'replace:local']
+                files: ['src/css/**/*.scss', 'src/index.html', 'src/js/**/*.js', 'src/boot.js'],
+                tasks: ['sass', 'autoprefixer', 'cssmin', 'hash', 'copy', 'htmlConvert', 'replace:html', 'requirejs', 'replace:local']
             },
             remote: {
-                files: ['src/css/**/*.scss', 'src/index.html', 'src/js/**/*.js'],
-                tasks: ['sass', 'autoprefixer', 'cssmin', 'hash', 'copy', 'replace:remote', 'copy', 'aws_s3']
+                files: ['src/css/**/*.scss', 'src/index.html', 'src/js/**/*.js', 'src/boot.js'],
+                tasks: ['sass', 'autoprefixer', 'cssmin', 'hash', 'requirejs', 'copy', 'htmlConvert', 'replace:remote', 'aws_s3']
             }
         },
         sass: {
@@ -40,12 +41,29 @@ module.exports = function(grunt) {
                 }]
             }
         },
+        requirejs: {
+            compile: {
+                options: {
+                    baseUrl: './build/js/',
+                    inlineText: true,
+                    name: 'main',
+                    out: 'build/js/main.js',
+                    preserveLicenseComments: false,
+                    useSourceUrl: true,
+                    include: ['main'],
+                    wrap: {
+                        start: 'define(["require"],function(require){var req=(function(){',
+                        end: 'return require; }()); return req; });'
+                    }
+                }
+            }
+        },
         copy: {
             main: {
                 files: [{
                     expand: true,
                     cwd: 'src',
-                    src: ['assets/*', 'js/*', 'index.html', 'boot.js'],
+                    src: ['assets/**', 'js/**', 'index.html', 'boot.js'],
                     dest: 'build/'
                 }]
             }
@@ -78,6 +96,28 @@ module.exports = function(grunt) {
                     dest: 'build',
                     expand: true
                 }]
+            },
+            html: {
+                options: {
+                    patterns: [{
+                        match: /@@template@@/g,
+                        replacement: function() {
+                            return grunt.file.read('build/js/template.js');
+                        }
+                    }]
+                },
+                files: [{
+                    src: ['js/main.js'],
+                    cwd: 'build',
+                    dest: 'build',
+                    expand: true
+                }]
+            },
+        },
+        htmlConvert: {
+            template: {
+                src: ['src/index.html'],
+                dest: 'build/js/template.js'
             }
         },
         connect: {
