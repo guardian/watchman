@@ -9,7 +9,6 @@ define([
 
     return {
         init: function() {
-            this.scrolling();
             if(!(/Android|iPhone|iPad|iPod|BlackBerry|Windows Phone/i).test(navigator.userAgent || navigator.vendor || window.opera)){
                 Skrollr.init({
                     forceHeight: false,
@@ -25,13 +24,6 @@ define([
                     console.log(scrollTop);
                 }.bind(this));
             }
-        },
-
-        scrolling: function() {
-            viewportHeight = $(window).height();
-            $(window).resize(function() {
-                viewportHeight = $(window).height();
-            });
         }
     };
 });
