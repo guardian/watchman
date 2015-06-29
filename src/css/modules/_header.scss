@@ -1,0 +1,17 @@
+.watchman__header {
+    position: absolute;
+    left: 0;
+    right: 0;
+    z-index: 10;
+    height: 100vh;
+    color: white;
+    background: url("@@assetPath@@/assets/matmi-social.png") no-repeat;
+    background-size: cover;
+    overflow: hidden;
+}
+
+.header__title {
+    font-family: $f-serif-headline;
+    font-weight: 200;
+    font-size: 4.8rem;
+}

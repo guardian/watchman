@@ -9,11 +9,11 @@ module.exports = function(grunt) {
         watch: {
             local: {
                 files: ['src/css/**/*.scss', 'src/index.html', 'src/js/**/*.js', 'src/boot.js'],
-                tasks: ['sass', 'autoprefixer', 'cssmin', 'hash', 'copy', 'htmlConvert', 'replace:html', 'requirejs', 'replace:local']
+                tasks: ['sass', 'autoprefixer', 'cssmin', 'copy', 'htmlConvert', 'replace:html', 'requirejs', 'replace:local']
             },
             remote: {
                 files: ['src/css/**/*.scss', 'src/index.html', 'src/js/**/*.js', 'src/boot.js'],
-                tasks: ['sass', 'autoprefixer', 'cssmin', 'hash', 'requirejs', 'copy', 'htmlConvert', 'replace:remote', 'aws_s3']
+                tasks: ['sass', 'autoprefixer', 'cssmin', 'requirejs', 'copy', 'htmlConvert', 'replace:remote', 'aws_s3']
             }
         },
         sass: {
@@ -158,16 +158,6 @@ module.exports = function(grunt) {
                         CacheControl: 'max-age=2678400'
                     }
                 }]
-            }
-        },
-        hash: {
-            options: {
-                mapping: 'src/hashmap.json',
-                flatten: true
-            },
-            source: {
-                src: 'src/assets/*',
-                dest: options.location + '/hashed/'
             }
         }
     });
