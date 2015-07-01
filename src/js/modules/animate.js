@@ -15,13 +15,11 @@ define([
                     skrollrBody: 'js-context',
                     render: function(data) {
                         scrollTop = data.curTop;
-                        console.log(scrollTop);
                     }.bind(this)
                 });
             } else {
                 $(window).scroll(function() {
                     scrollTop = $(window).scrollTop();
-                    console.log(scrollTop);
                 }.bind(this));
             }
         }
