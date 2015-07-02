@@ -34,6 +34,32 @@
     font-size: 1.8rem;
 }
 
+.header__sound {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    border: 1px solid $c-white;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+}
+
+.header__sound-button {
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    margin: auto;
+    width: 16px;
+    height: 13px;
+    fill: $c-white;
+}
+
+.sound-button--on {
+    display: none;
+}
+
 .header__meta {
     position: absolute;
     bottom: 140px;
@@ -95,6 +121,16 @@
     bottom: 50px;
 }
 
+@keyframes track {
+    0% {
+        background-position-x: -908px;
+    }
+
+    100% {
+        background-position-x: 0px;
+    }
+}
+
 .header-scene__track {
     position: absolute;
     bottom: -66px;
@@ -104,6 +140,8 @@
     background: url("@@assetPath@@/assets/header-tracks.png") repeat-x;
     height: 50px;
     background-color: $c-brown;
+    will-change: background;
+    animation: track 3s infinite linear;
 }
 
 .train {
