@@ -135,6 +135,7 @@
 
 .header-scene__track {
     position: absolute;
+    z-index: 6;
     bottom: -66px;
     left: 0;
     right: 0;
@@ -153,7 +154,7 @@
         transform: translate(0px);
     }
     50% {
-        transform: translate(40px);
+        transform: translate(20px);
     }
     100% {
         transform: translate(0px);
@@ -165,7 +166,7 @@
     height: 457px;
     width: 140%;
     margin-left: -20%;
-    animation: trainWobble 6s infinite ease-out;
+    animation: trainWobble 8s infinite cubic-bezier(0.01, 0.54, 0.87, 0.27);
 }
 
 .train__left {
