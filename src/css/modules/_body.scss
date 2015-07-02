@@ -1,25 +1,30 @@
 .watchman__body {
-    color: $c-white;
-    background-color: #272521;
+    color: #272521;
+    background-color: #fff9e1;
     overflow-x: scroll;
+    background: url("@@assetPath@@/assets/background.png") repeat-y;
+    background-size: 100%;
 }
 
 .watchman__content {
     max-width: 500px;
-    padding-top: 50px;
 
     p {
         margin-bottom: 0;
+
+        & + p {
+            text-indent: 2em;
+        }
+
+        &.initial-paragraph {
+            padding-top: 50px;
+        }
     }
 
-    p:first-of-type:first-letter {
+    .initial-letter {
         font-size: 5em;
         line-height: 0;
         color: #fdd4bd;
-    }
-
-    p + p {
-        text-indent: 2em;
     }
 }
 
@@ -101,4 +106,24 @@
 
 .window-layer--5 {
     animation-duration: 40s;
+}
+
+.watchman__divider {
+    position: relative;
+    z-index: 10;
+    height: 500px;
+    margin: 30px 0;
+    background-size: cover;
+}
+
+.watchman__divider--1 {
+    background-image: url("@@assetPath@@/assets/divider-1.png");
+}
+
+.watchman__divider--2 {
+    background-image: url("@@assetPath@@/assets/divider-2.png");
+}
+
+.watchman__divider--3 {
+    background-image: url("@@assetPath@@/assets/divider-3.png");
 }
