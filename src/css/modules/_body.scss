@@ -24,9 +24,7 @@
 }
 
 .watchman__window {
-    position: fixed;
-    left: 540px;
-    top: 100px;
+    position: relative;
     width: 1000px;
     height: 600px;
 }
@@ -66,9 +64,8 @@
     background-size: 2000px;
     background-repeat: repeat-x;
     animation: slide 20s linear infinite;
-    filter: blur(20px);
+    will-change: background;
 }
-
 
 @keyframes slide {
     0% {

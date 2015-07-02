@@ -1,17 +1,130 @@
 .watchman__header {
-    position: absolute;
-    left: 0;
-    right: 0;
-    z-index: 10;
-    height: 100vh;
-    color: white;
-    background: url("@@assetPath@@/assets/matmi-social.png") no-repeat;
-    background-size: cover;
+    position: relative;
+    height: 900px; 
+    color: $c-white;
+    background: $c-yellow url("@@assetPath@@/assets/bg.jpg") repeat-x;
+    background-size: 50%;
     overflow: hidden;
+    font-family: $f-serif-headline;
+    font-weight: 900;
+    line-height: 1.1;
+
+    .gs-container {
+        padding-top: 48px;
+    }
 }
 
 .header__title {
-    font-family: $f-serif-headline;
-    font-weight: 200;
-    font-size: 4.8rem;
+    font-size: 4.6rem;
+    margin-top: -0.1em;
+    margin-bottom: -0.15em;
+}
+
+.header__byline {
+    font-size: 1.8rem;
+}
+
+.header__title,
+.header__byline {
+    text-indent: 100px;
+}
+
+.header__description {
+    color: $c-orange;
+    font-size: 1.8rem;
+}
+
+.header__meta {
+    position: absolute;
+    bottom: 140px;
+    left: 0;
+    right: 0;
+    z-index: 10;
+}
+
+.header-meta__byline {
+    width: 400px;
+    float: left;
+}
+
+.header-meta__social {
+    float: right;
+    padding-top: 0;
+}
+
+@keyframes headerLayers {
+    0% {
+        background-position-x: -780px;
+    }
+
+    100% {
+        background-position-x: 0px;
+    }
+}
+
+.header-scene__layer-1,
+.header-scene__layer-2 {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    height: 400px;
+    animation: headerLayers 10s infinite linear;
+}
+
+.header-scene__layer-1 {
+    background: url("@@assetPath@@/assets/header-layer-1.png") repeat-x;
+    background-size: 780px;
+    background-position-y: bottom;
+    animation-duration: 14s;
+    bottom: 30px;
+}
+
+.header-scene__layer-2 {
+    background: url("@@assetPath@@/assets/header-layer-2.png") repeat-x;
+    background-size: 780px;
+    bottom: 40px;
+    background-position-y: bottom;
+}
+
+.header-scene__train {
+    position: absolute;
+    z-index: 5;
+    left: 0;
+    right: 0;
+    bottom: 50px;
+}
+
+.header-scene__track {
+    position: absolute;
+    bottom: -66px;
+    left: 0;
+    right: 0;
+    padding-bottom: 30px;
+    background: url("@@assetPath@@/assets/header-tracks.png") repeat-x;
+    height: 50px;
+    background-color: $c-brown;
+}
+
+.train {
+    width: 100%;
+    display: table;
+    table-layout: fixed;
+
+    > * {
+        display: table-cell;
+    }
+}
+
+.train__carriage {
+    display: block;
+    margin: 0 auto;
+}
+
+.train__left {
+    background: url("@@assetPath@@/assets/header-train-left.png") repeat-x;
+}
+
+.train__right {
+    background: url("@@assetPath@@/assets/header-train-right.png") repeat-x;
 }
