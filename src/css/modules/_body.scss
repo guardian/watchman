@@ -1,7 +1,7 @@
 .watchman__body {
     color: #272521;
     background-color: #fff9e1;
-    overflow-x: scroll;
+    overflow: hidden;
     background: url("@@assetPath@@/assets/background.png") repeat-y;
     background-size: 100%;
 }
@@ -32,6 +32,15 @@
     position: relative;
     width: 1000px;
     height: 600px;
+    float: right;
+    margin-top: 30px;
+    margin-right: -450px;
+
+    .watchman__container--1 & {
+        top: 0;
+        position: absolute;
+        right: 100px;
+    }
 }
 
 .window-frame {
@@ -55,18 +64,19 @@
     margin: auto;
     border: 1px solid #3b3932;
     border-radius: 30px;
-    background: url("@@assetPath@@/assets/bg.png") no-repeat;
     background-size: cover;
 }
 
 .window-layer {
     position: absolute;
-    top: 0;
     right: 0;
     bottom: 0;
     left: 0;
+    height: 500px;
+    width: 100%;
     margin: auto;
-    background-size: 2000px;
+    padding-right: 2000px;
+    background-position-y: bottom;
     background-repeat: repeat-x;
     animation: slide 20s linear infinite;
     will-change: background;
@@ -74,38 +84,34 @@
 
 @keyframes slide {
     0% {
-        background-position-x: -2000px;
+        transform: translateX(-2000px);
     }
 
     100% {
-        background-position-x: 0px;
+        transform: translateX(0px);
     }
 }
 
-@for $layer from 1 through 5 {
-    .window-layer--#{$layer} {
-        background-image: url("@@assetPath@@/assets/layer-#{$layer}.png");
+.window-outside--1 {
+    .window-layer--bg {
+        background-image: url("@@assetPath@@/assets/landscape1-bg.jpg");
+        animation-duration: 100s;
     }
-}
 
-.window-layer--1 {
-    animation-duration: 100s;
-}
+    .window-layer--mountains-1 {
+        background-image: url("@@assetPath@@/assets/landscape1-mountains1.png");
+        animation-duration: 80s;
+    }
 
-.window-layer--2 {
-    animation-duration: 80s;
-}
+    .window-layer--mountains-2 {
+        background-image: url("@@assetPath@@/assets/landscape1-mountains2.png");
+        animation-duration: 70s;
+    }
 
-.window-layer--3 {
-    animation-duration: 70s;
-}
-
-.window-layer--4 {
-    animation-duration: 50s;
-}
-
-.window-layer--5 {
-    animation-duration: 40s;
+    .window-layer--ground {
+        background-image: url("@@assetPath@@/assets/landscape1-ground.png");
+        animation-duration: 70s;
+    }
 }
 
 .watchman__divider {
