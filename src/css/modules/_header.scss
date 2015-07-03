@@ -115,6 +115,34 @@
     background-position-y: bottom;
 }
 
+@keyframes dust {
+    0% {
+        transform: translate(-1153px);
+    }
+
+    100% {
+        transform: translate(0px);
+    }
+}
+
+.header-scene__dust {
+    position: absolute;
+    z-index: 10;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 300px;
+    width: 100%;
+    background: url("@@assetPath@@/assets/dust.png") repeat-x;
+    padding-right: 1153px;
+    animation: dust 0.5s infinite linear;
+}
+
+.header-scene__plane {
+    position: absolute;
+    left: 80%;
+}
+
 .header-scene__train {
     position: absolute;
     z-index: 5;
