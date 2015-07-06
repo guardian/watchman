@@ -3,7 +3,8 @@
     height: 900px; 
     color: $c-white;
     background: $c-yellow url("@@assetPath@@/assets/bg.jpg") repeat-x;
-    background-size: 50%;
+    background-size: 100%;
+    background-position-y:-100px;
     overflow: hidden;
     font-family: $f-serif-headline;
     font-weight: 900;
