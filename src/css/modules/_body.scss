@@ -71,7 +71,8 @@
     right: 0;
     bottom: 0;
     left: 0;
-    background: url("@@assetPath@@/assets/window.png") no-repeat;
+    // background: url("@@assetPath@@/assets/window.png") no-repeat;
+    background-repeat:no-repeat;
     background-size: contain;
     z-index: 5;
 }
@@ -116,22 +117,22 @@
 
 .window-outside--1 {
     .window-layer--bg {
-        background-image: url("@@assetPath@@/assets/landscape1-bg.jpg");
+        // background-image: url("@@assetPath@@/assets/landscape1-bg.jpg");
         animation-duration: 100s;
     }
 
     .window-layer--mountains-1 {
-        background-image: url("@@assetPath@@/assets/landscape1-mountains1.png");
+        // background-image: url("@@assetPath@@/assets/landscape1-mountains1.png");
         animation-duration: 80s;
     }
 
     .window-layer--mountains-2 {
-        background-image: url("@@assetPath@@/assets/landscape1-mountains2.png");
+        // background-image: url("@@assetPath@@/assets/landscape1-mountains2.png");
         animation-duration: 70s;
     }
 
     .window-layer--ground {
-        background-image: url("@@assetPath@@/assets/landscape1-ground.png");
+        // background-image: url("@@assetPath@@/assets/landscape1-ground.png");
         animation-duration: 70s;
     }
 }
@@ -145,18 +146,18 @@
 }
 
 .watchman__divider--1 {
-    background-image: url("@@assetPath@@/assets/divider-1.png");
+    // background-image: url("@@assetPath@@/assets/divider-1.png");
 }
 
 .watchman__divider--2 {
-    background-image: url("@@assetPath@@/assets/divider-2.png");
+    // background-image: url("@@assetPath@@/assets/divider-2.png");
 }
 
 .watchman__divider--3 {
-    background-image: url("@@assetPath@@/assets/divider-3.png");
+    // background-image: url("@@assetPath@@/assets/divider-3.png");
 }
 
 .watchman__divider--4 {
-    background-image: url("@@assetPath@@/assets/divider-4.png");
+    // background-image: url("@@assetPath@@/assets/divider-4.png");
     margin-bottom: 0;
 }

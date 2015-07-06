@@ -1,9 +1,11 @@
 define([
     'libs/jquery',
-    'modules/animate'
+    'modules/animate',
+    'modules/lazyload'
 ], function(
     jQuery,
-    animate
+    animate,
+    lazyload
 ) {
     'use strict';
 
@@ -15,9 +17,10 @@ define([
 
         $(window).ready(function() {
             animate.init();
+            lazyload.init();
         });
+        
         $('.header__sound-button').on('click',function(e){
-            console.log($('#background_audio'))
             if(!mute){
                 $('#background_audio')[0].pause();
                 $('.sound-button--off').css('display','block')
@@ -27,9 +30,10 @@ define([
                 $('.sound-button--off').css('display','none')
                 $('.sound-button--on').css('display','block')
             }
-
             mute = !mute;
         })
+
+        
     }
 
     return {
