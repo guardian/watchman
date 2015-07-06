@@ -42,6 +42,10 @@
     width: 32px;
     height: 32px;
     border-radius: 50%;
+    cursor:pointer;
+    &:hover{
+        opacity:0.8;
+    }
 }
 
 .header__sound-button {
@@ -56,7 +60,7 @@
     fill: $c-white;
 }
 
-.sound-button--on {
+.sound-button--off {
     display: none;
 }
 
