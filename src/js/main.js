@@ -8,7 +8,7 @@ define([
     'use strict';
 
     function init(el) {
-        var mute =  false;
+        var mute =  true;
         @@template@@
         console.log('hey')
         $(".content--interactive").html(template["index.html"]);

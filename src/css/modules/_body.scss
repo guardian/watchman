@@ -8,6 +8,7 @@
 
 .watchman__content {
     max-width: 500px;
+    padding-top:50px;
 
     p {
         margin-bottom: 0;
@@ -17,29 +18,50 @@
         }
 
         &.initial-paragraph {
-            padding-top: 50px;
+            padding-top: 0;
         }
     }
 
     .initial-letter {
-        font-size: 5em;
-        line-height: 0;
+        font-size: 96px;
+        line-height: 1em;
         color: #fdd4bd;
+        float:left;
+        margin-right:20px;
     }
 }
 
 .watchman__window {
     position: relative;
-    width: 1000px;
-    height: 600px;
-    float: right;
-    margin-top: 30px;
-    margin-right: -450px;
+    padding-bottom:64%;
+    margin-top: 50px;
 
     .watchman__container--1 & {
-        top: 0;
+        position: relative;
+    }
+}
+@media(min-width:980px){
+    .watchman__window {
         position: absolute;
-        right: 100px;
+        width: 617px;
+        height:395px;
+        padding-bottom:0;
+
+        .watchman__container--1 & {
+            top: 0;
+            position: absolute;
+            left:60%;
+        }
+    }
+}
+
+@media(min-width:1140px){
+    .watchman__window {
+        width: 925px;
+        height:591px;
+        .watchman__container--1 & {
+            left:50%;
+        }
     }
 }
 

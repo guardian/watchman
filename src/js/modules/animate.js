@@ -9,7 +9,7 @@ define([
 
     return {
         init: function() {
-            if(!(/Android|iPhone|iPad|iPod|BlackBerry|Windows Phone/i).test(navigator.userAgent || navigator.vendor || window.opera)){
+            if(!(/Android|iPhone|iPad|iPod|BlackBerry|Windows Phone/i).test(navigator.userAgent || navigator.vendor || window.opera) && window.innerWidth > 980){
                 Skrollr.init({
                     forceHeight: false,
                     skrollrBody: 'js-context',
