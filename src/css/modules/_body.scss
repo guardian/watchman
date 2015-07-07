@@ -9,7 +9,7 @@
     max-width: 500px;
 
 
-    @include mq(desktop) {
+    @include mq(tablet) {
         padding-left: 60px;
     }
 
@@ -26,7 +26,7 @@
     }
 
     .initial-letter {
-        font-size: 96px;
+        font-size: 5em;
         line-height: 1em;
         color: #fdd4bd;
         float:left;
@@ -38,8 +38,10 @@
     position: relative;
     padding-bottom:64%;
     margin-top: 50px;
+    display: none;
 
     @include mq(desktop) {
+        display: block;
         position: absolute;
         width: 617px;
         height: 395px;
