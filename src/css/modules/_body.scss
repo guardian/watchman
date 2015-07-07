@@ -10,6 +10,10 @@
     max-width: 500px;
     padding-top:50px;
 
+    @include mq(desktop) {
+        padding-left: 60px;
+    }
+
     p {
         margin-bottom: 0;
 
