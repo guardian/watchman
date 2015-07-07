@@ -40,7 +40,7 @@
         // importants to override Skrollr inline styles
         position: relative !important;
         top: 0 !important;
-        padding-bottom: 60%;
+        padding-bottom: 73%;
     }
 
     @include mq(desktop) {
@@ -54,7 +54,7 @@
     }
 
     @include mq(leftCol) {
-        width: 925px;
+        width: 825px;
         height: 591px;
         left: 50%;
     }
@@ -73,10 +73,10 @@
 
 .window-outside {
     position: absolute;
-    top: 8%;
+    top: 7%;
     left: 8%;
     right: 8%;
-    bottom: 8%;
+    bottom: 21%;
     overflow: hidden;
     margin: auto;
     border: 1px solid #3b3932;

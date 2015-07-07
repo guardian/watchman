@@ -5,11 +5,14 @@
     color: $c-white;
     background: $c-dark-yellow url("@@assetPath@@/assets/bg.jpg") repeat-x;
     background-size: 100%;
-    background-position-y:-180px;
     overflow: hidden;
     font-family: $f-serif-headline;
     font-weight: 900;
     line-height: 1.1;
+
+    @include mq(tablet) {
+        background-position-y:-180px;
+    }
 
     .gs-container {
         padding-top: 48px;
@@ -17,9 +20,12 @@
 }
 
 .header__title {
-    font-size: 4.6rem;
-    margin-top: -0.1em;
-    margin-bottom: -0.15em;
+    font-size: 3.2rem;
+    line-height: 0.9;
+
+    @include mq(tablet) {
+        font-size: 4.6rem;
+    }
 }
 
 // .header__title {
@@ -48,7 +54,9 @@
 
 .header__title,
 .header__byline {
-    text-indent: 100px;
+    @include mq(tablet) {
+        text-indent: 100px;
+    }
 }
 
 .header__description {
