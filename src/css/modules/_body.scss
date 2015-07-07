@@ -40,31 +40,29 @@
     padding-bottom:64%;
     margin-top: 50px;
 
-    .watchman__container--1 & {
-        position: relative;
-    }
-}
-@media(min-width:980px){
-    .watchman__window {
+    @include mq(desktop) {
         position: absolute;
         width: 617px;
-        height:395px;
-        padding-bottom:0;
-
-        .watchman__container--1 & {
-            top: 0;
-            position: absolute;
-            left:60%;
-        }
+        height: 395px;
+        padding-bottom: 0;
     }
-}
 
-@media(min-width:1140px){
-    .watchman__window {
+    @include mq(leftCol) {
         width: 925px;
-        height:591px;
-        .watchman__container--1 & {
-            left:50%;
+        height: 591px;
+    }
+
+    .watchman__container--1 & {
+        position: relative;
+
+        @include mq(desktop) {
+            position: absolute;
+            top: 0;
+            left: 60%;
+        }
+
+        @include mq(leftCol) {
+            left: 50%;
         }
     }
 }
