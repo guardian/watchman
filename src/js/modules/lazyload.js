@@ -5,6 +5,7 @@ define(['libs/throttle'], function(throttle){
    	var windowHeight;
    	var windowWidth;
     var windowTop;
+    var activeOffset = 100;
 
     var lazyloader = {
         init: function() {
@@ -41,14 +42,16 @@ define(['libs/throttle'], function(throttle){
         pauseAnimations: function(){
             for (var i=0; i<activeAnimations.length; i++){
                 activeAnimations[i].offset = activeAnimations[i].el.getBoundingClientRect().top;
+                console.log(activeAnimations[i].offset + activeOffset + activeAnimations[i].height,0);
+                console.log(activeAnimations[1].offset - activeOffset, windowHeight);
 
-                if(activeAnimations[i].offset < windowHeight && activeAnimations[i].offset + activeAnimations[i].height > 0 && !activeAnimations[i].active){
+                if(activeAnimations[i].offset - activeOffset < windowHeight && activeAnimations[i].offset + activeAnimations[i].height + activeOffset > 0 && !activeAnimations[i].active){
                     activeAnimations[i].active = true;
                     activeAnimations[i].el.className = activeAnimations[i].el.className + " activeAnimation";
                 }
 
                 if(activeAnimations[i].active){
-                    if(activeAnimations[i].offset + activeAnimations[i].height < 0  || activeAnimations[i].offset > windowHeight){
+                    if(activeAnimations[i].offset + activeOffset + activeAnimations[i].height < 0  || activeAnimations[i].offset - activeOffset > windowHeight){
                         activeAnimations[i].active = false;
                         activeAnimations[i].el.className = activeAnimations[i].el.className.replace(" activeAnimation","")
                     }
