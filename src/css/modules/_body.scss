@@ -1,14 +1,13 @@
 .watchman__body {
-    color: #272521;
-    background-color: #fff9e1;
+    color: #333;
+    background-color: $c-yellow;
     overflow: hidden;
-    background: url("@@assetPath@@/assets/background.png") repeat-y;
-    background-size: 100%;
+    padding-top: 30px;
 }
 
 .watchman__content {
     max-width: 500px;
-    padding-top:50px;
+
 
     @include mq(desktop) {
         padding-left: 60px;
