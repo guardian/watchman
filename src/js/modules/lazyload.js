@@ -1,4 +1,4 @@
-define(['libs/jquery','libs/throttle'], function(jQuery,throttle){
+define(['libs/throttle'], function(throttle){
    	var lazyLoadContainers;
    	var targets = [];
    	var windowHeight;
@@ -6,15 +6,14 @@ define(['libs/jquery','libs/throttle'], function(jQuery,throttle){
 
     var lazyloader = {
         init: function() {
-        	console.log('hoi')
-            lazyLoadContainers = $('.lazyload-container');
+            lazyLoadContainers = document.querySelectorAll('.lazyload-container');
 
-            lazyLoadContainers.map(function(i,j){
+            for (var i=0; i<lazyLoadContainers.length; i++){
                 targets.push({
-                    el: j,
-                    position: j.offsetTop
+                    el: lazyLoadContainers[i],
+                    position: lazyLoadContainers[i].offsetTop
                 })
-            })
+            }
 
             var throttleLoader = throttle(function(){
                 windowHeight = window.innerHeight;
@@ -22,8 +21,8 @@ define(['libs/jquery','libs/throttle'], function(jQuery,throttle){
                 lazyloader.lazyload()
             },500)
 
-            $(window).on('scroll',throttleLoader)
-            $(window).on('resize',throttleLoader)
+            window.addEventListener("resize", throttleLoader, false );
+            window.addEventListener("scroll", throttleLoader, false );
         },
 
         lazyload: function(){
@@ -38,16 +37,16 @@ define(['libs/jquery','libs/throttle'], function(jQuery,throttle){
         },
 
         loadimages: function(lazyloadContainer){
-        	var imageList = $(lazyloadContainer).find('[data-image]');
+        	var imageList = lazyloadContainer.querySelectorAll('*[data-image]');
 
         	if(imageList.length > 0){
-        		$.each(imageList,function(i,el){
-        			var imageSrc = "http://localhost:8000/assets/" + $(el).attr('data-image');
-        			$(el).css('background-image','url(' + imageSrc +')')
-        		})
+        		for(var i=0; i<imageList.length; i++){
+        			var imageSrc = "http://localhost:8000/assets/" + imageList[i].getAttribute('data-image');
+        			imageList[i].style.backgroundImage = "url(" + imageSrc + ")";
+        		}
         	}else if( $(lazyloadContainer).attr('data-image') ){
-        		var imageSrc = "http://localhost:8000/assets/" + $(lazyloadContainer).attr('data-image');
-        		$(lazyloadContainer).css('background-image','url(' + imageSrc +')')
+        		var imageSrc = "http://localhost:8000/assets/" + lazyloadContainer.getAttribute('data-image');
+        		lazyloadContainer.style.backgroundImage = "url(" + imageSrc + ")";
         	}
         }
     };

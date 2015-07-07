@@ -12,7 +12,6 @@ define([
     function init(el) {
         var mute =  true;
         @@template@@
-        console.log('hey')
         $(".content--interactive").html(template["index.html"]);
 
         $(window).ready(function() {
