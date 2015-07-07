@@ -5,7 +5,7 @@
     color: $c-white;
     background: $c-yellow url("@@assetPath@@/assets/bg.jpg") repeat-x;
     background-size: 100%;
-    background-position-y:-100px;
+    background-position-y:-180px;
     overflow: hidden;
     font-family: $f-serif-headline;
     font-weight: 900;
@@ -16,11 +16,25 @@
     }
 }
 
-.header__title {
-    font-size: 4.6rem;
-    margin-top: -0.1em;
-    margin-bottom: -0.15em;
-}
+// .header__title {
+//     width:100%;
+//     max-width:620px;
+//     position: relative;
+//     position: absolute;
+//     height:200px;
+//     top:200px;
+//     img{
+//         position: absolute;
+//         &.title_goset{
+//             max-width:244px;
+//         }
+//         &.title_watchman{
+//             max-width:460px;
+//             top:90px;
+//             left:120px;
+//         }
+//     }
+// }
 
 .header__byline {
     font-size: 1.8rem;
@@ -103,7 +117,26 @@
     height: 400px;
     width: 100%;
     padding-right: 780px;
-    animation: headerLayers 10s infinite linear;
+    // animation: headerLayers 10s infinite linear;
+}
+
+// Animations
+.activeAnimation{
+    .header-scene__layer-1, .header-scene__layer-2 {
+        animation: headerLayers 10s infinite linear;
+    }
+    .header-scene__dust {
+        animation: dust 0.7s infinite linear;
+    }
+    .header-scene__track {
+        animation: track 3s infinite linear;
+    }
+    .train {
+        animation: trainWobble 8s infinite cubic-bezier(0.01, 0.54, 0.87, 0.27);
+    }
+    .header-scene__train__wheels .train__wheel {
+        animation: wheels 4s infinite linear;
+    }
 }
 
 .header-scene__layer-1 {
@@ -141,7 +174,7 @@
     width: 100%;
     background: url("@@assetPath@@/assets/dust.png") repeat-x;
     padding-right: 1153px;
-    animation: dust 0.7s infinite linear;
+    // animation: dust 0.7s infinite linear;
 }
 
 .header-scene__plane {
@@ -180,7 +213,7 @@
     height: 50px;
     background-color: $c-brown;
     will-change: background;
-    animation: track 3s infinite linear;
+    // animation: track 3s infinite linear;
 }
 
 @keyframes trainWobble {
@@ -202,7 +235,7 @@
     height: 457px;
     width: 140%;
     margin-left: -20%;
-    animation: trainWobble 8s infinite cubic-bezier(0.01, 0.54, 0.87, 0.27);
+    // animation: trainWobble 8s infinite cubic-bezier(0.01, 0.54, 0.87, 0.27);
 }
 
 .train__left {
@@ -255,7 +288,7 @@
         width: 130px;
         background: url("@@assetPath@@/assets/header-train-wheel--1.png") no-repeat;
         background-size: contain;
-        animation: wheels 4s infinite linear;
+        // animation: wheels 4s infinite linear;
     }
 
     .train__wheel--1 {
