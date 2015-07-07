@@ -100,7 +100,7 @@
     height: 500px;
     width: 100%;
     margin: auto;
-    padding-right: 2000px;
+    padding-right: 3640px;
     background-position-y: bottom;
     background-repeat: repeat-x;
     animation: slide 20s linear infinite;
@@ -109,7 +109,7 @@
 
 @keyframes slide {
     0% {
-        transform: translateX(-2000px);
+        transform: translateX(-3640px);
     }
 
     100% {
@@ -119,23 +119,39 @@
 
 .window-outside--1 {
     .window-layer--bg {
-        // background-image: url("@@assetPath@@/assets/landscape1-bg.jpg");
         animation-duration: 100s;
     }
 
     .window-layer--mountains-1 {
-        // background-image: url("@@assetPath@@/assets/landscape1-mountains1.png");
         animation-duration: 80s;
+        bottom: 60px;
     }
 
     .window-layer--mountains-2 {
-        // background-image: url("@@assetPath@@/assets/landscape1-mountains2.png");
         animation-duration: 70s;
     }
 
-    .window-layer--ground {
-        // background-image: url("@@assetPath@@/assets/landscape1-ground.png");
-        animation-duration: 70s;
+    .window-layer--dust {
+        animation-duration: 60s;
+    }
+
+    .window-layer--trees {
+        animation-duration: 10s;
+        background-repeat: no-repeat;
+        background-position: 50% bottom;
+    }
+
+    .window-layer--plants {
+        animation-duration: 10s;
+        background-repeat: no-repeat;
+        background-size: 40%;
+        background-position: 70% bottom;
+    }
+
+    .window-layer--rocks {
+        animation-duration: 10s;
+        background-repeat: no-repeat;
+        background-position: 80% bottom;
     }
 }
 
