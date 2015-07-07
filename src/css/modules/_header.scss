@@ -67,7 +67,7 @@
 
 .header__meta {
     position: absolute;
-    bottom: 140px;
+    bottom: 165px;
     left: 0;
     right: 0;
     z-index: 10;
@@ -195,6 +195,8 @@
 }
 
 .train {
+    position: relative;
+    z-index: 5;
     display: flex;
     height: 457px;
     width: 140%;
@@ -205,6 +207,7 @@
 .train__left {
     background: url("@@assetPath@@/assets/header-train-left.png") repeat-x;
     float: left;
+    background-position: right center;
 }
 
 .train__right {
@@ -217,4 +220,60 @@
     background-size: contain;
     flex-grow: 2;
     min-width: 3px;
+}
+
+.header-scene__train__under-carriage {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 115px;
+    background: url("@@assetPath@@/assets/header-train-under-carriage.png") repeat-x;
+}
+
+@keyframes wheels {
+    0% {
+        transform: rotate(360deg);
+    }
+
+    100% {
+        transform: rotate(0deg);
+    }
+}
+
+.header-scene__train__wheels {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 130px;
+
+    .train__wheel {
+        position: absolute;
+        height: 130px;
+        width: 130px;
+        background: url("@@assetPath@@/assets/header-train-wheel--1.png") no-repeat;
+        background-size: contain;
+        animation: wheels 4s infinite linear;
+    }
+
+    .train__wheel--1 {
+        left: 480px;
+        background-image: url("@@assetPath@@/assets/header-train-wheel--1.png");
+    }
+
+    .train__wheel--2 {
+        left: 736px;
+        background-image: url("@@assetPath@@/assets/header-train-wheel--2.png");
+    }
+
+    .train__wheel--3 {
+        left: 970px;
+        background-image: url("@@assetPath@@/assets/header-train-wheel--2.png");
+    }
+
+    .train__wheel--4 {
+        left: 1230px;
+        background-image: url("@@assetPath@@/assets/header-train-wheel--1.png");
+    }
 }

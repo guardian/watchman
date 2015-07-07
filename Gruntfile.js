@@ -8,7 +8,7 @@ module.exports = function(grunt) {
     grunt.initConfig({
         watch: {
             local: {
-                files: ['src/css/**/*.scss', 'src/index.html', 'src/js/**/*.js', 'src/boot.js'],
+                files: ['src/css/**/*.scss', 'src/index.html', 'src/js/**/*.js', 'src/boot.js', 'src/assets/**/*'],
                 tasks: ['sass', 'autoprefixer', 'cssmin', 'copy', 'htmlConvert', 'replace:html', 'requirejs', 'replace:local']
             },
             remote: {
