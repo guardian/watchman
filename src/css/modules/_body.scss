@@ -107,6 +107,9 @@
     padding-right: 3640px;
     background-position-y: bottom;
     background-repeat: repeat-x;
+    
+}
+.activeAnimation .window-layer {
     animation: slide 20s linear infinite;
     will-change: background;
 }
@@ -131,7 +134,7 @@
     }
 }
 
-.window-outside--1 {
+.activeAnimation .window-outside--1 {
     .window-layer--bg {
         animation-duration: 100s;
     }
