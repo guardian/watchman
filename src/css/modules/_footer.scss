@@ -1,0 +1,51 @@
+.watchman__footer {
+    background-color: lighten($c-brown, 40%);
+    margin-top: 30px;
+}
+
+.watchman__footer__title {
+    background-color: $c-brown;
+    color: $c-yellow;
+    font-size: 1.4rem;
+    font-family: $f-serif-headline;
+    font-weight: 900;
+    padding-bottom: .5em;
+}
+
+.watchman__footer__content {
+    margin: 0;
+    padding: 0;
+
+    .gs-container {
+        padding-top: 12px;
+        padding-bottom: 12px;
+        overflow: auto;
+    }
+
+    .footer-content__item {
+        position: relative;
+        float: left;
+        width: 220px;
+        height: 300px;
+        padding: 0;
+        margin: 0;
+        margin-right: 20px;
+        list-style: none;
+
+        &:after {
+            content: "";
+            position: absolute;
+            right: -10px;
+            top: 0;
+            bottom: 0;
+            width: 1px;
+            background-color: rgba($c-black, 0.1);
+        }
+
+        &:last-of-type {
+            &:after {
+                width: 0px;
+            }
+        }
+    }
+}
