@@ -34,10 +34,14 @@
 }
 
 .watchman__window {
-    position: relative;
-    padding-bottom:64%;
-    margin-top: 50px;
-    display: none;
+    margin: 30px 0;
+
+    @include mq($until: desktop) {
+        // importants to override Skrollr code
+        position: relative !important;
+        top: 0 !important;
+        padding-bottom: 60%;
+    }
 
     @include mq(desktop) {
         display: block;
@@ -117,6 +121,16 @@
     }
 }
 
+@keyframes slideObject {
+    0% {
+        transform: translateX(-3640px);
+    }
+
+    20% {
+        transform: translateX(0px);
+    }
+}
+
 .window-outside--1 {
     .window-layer--bg {
         animation-duration: 100s;
@@ -127,31 +141,41 @@
         bottom: 60px;
     }
 
+    .window-layer--back-dust {
+        bottom: 40px;
+        animation-duration: 40s;
+    }
+
     .window-layer--mountains-2 {
         animation-duration: 70s;
     }
 
     .window-layer--dust {
-        animation-duration: 60s;
+        animation-duration: 30s;
+        bottom: -50px;
+    }
+
+    .window-layer--trees,
+    .window-layer--plants,
+    .window-layer--rocks {
+        animation-name: slideObject;
+        background-repeat: no-repeat;
+        background-position: center bottom;
     }
 
     .window-layer--trees {
-        animation-duration: 10s;
-        background-repeat: no-repeat;
-        background-position: 50% bottom;
+        animation-delay: -40s;
+        animation-duration: 60s;
     }
 
     .window-layer--plants {
-        animation-duration: 10s;
-        background-repeat: no-repeat;
+        animation-duration: 40s;
+        animation-delay: -20s;
         background-size: 40%;
-        background-position: 70% bottom;
     }
 
     .window-layer--rocks {
-        animation-duration: 10s;
-        background-repeat: no-repeat;
-        background-position: 80% bottom;
+        animation-duration: 60s;
     }
 }
 
