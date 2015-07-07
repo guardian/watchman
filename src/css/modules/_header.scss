@@ -3,7 +3,7 @@
     z-index: 10;
     height: 900px; 
     color: $c-white;
-    background: $c-yellow url("@@assetPath@@/assets/bg.jpg") repeat-x;
+    background: $c-dark-yellow url("@@assetPath@@/assets/bg.jpg") repeat-x;
     background-size: 100%;
     background-position-y:-180px;
     overflow: hidden;
@@ -14,6 +14,12 @@
     .gs-container {
         padding-top: 48px;
     }
+}
+
+.header__title {
+    font-size: 4.6rem;
+    margin-top: -0.1em;
+    margin-bottom: -0.15em;
 }
 
 // .header__title {

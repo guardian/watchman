@@ -8,7 +8,7 @@ $mq-breakpoints: (
     wide:            1300px
 );
 
-$c-yellow: #fff1bf;
+$c-dark-yellow: #fff1bf;
 $c-brown: #aa5a4f;
 $c-orange: #fc9a81;
 $c-yellow: #fefcf3;
@@ -26,3 +26,4 @@ $f-sans-serif-headline: 'Guardian Sans Web', 'Helvetica Neue', Helvetica, Arial,
 @import 'modules/existing';
 @import 'modules/header';
 @import 'modules/body';
+@import 'modules/footer';
