@@ -37,7 +37,7 @@
     margin: 30px 0;
 
     @include mq($until: desktop) {
-        // importants to override Skrollr code
+        // importants to override Skrollr inline styles
         position: relative !important;
         top: 0 !important;
         padding-bottom: 60%;
@@ -77,7 +77,6 @@
     right: 0;
     bottom: 0;
     left: 0;
-    // background: url("@@assetPath@@/assets/window.png") no-repeat;
     background-repeat:no-repeat;
     background-size: contain;
     z-index: 5;
@@ -182,13 +181,63 @@
 .watchman__divider {
     position: relative;
     z-index: 10;
-    height: 500px;
+    padding-bottom: 60%;
     margin: 30px 0;
     background-size: cover;
 }
 
 .watchman__divider--1 {
-    // background-image: url("@@assetPath@@/assets/divider-1.png");
+    .divider__background {
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        background-size: cover;
+        background-position: center bottom;
+    }
+
+    .divider__bridge {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-position: center bottom;
+    }
+
+    .divider__train {
+        position: absolute;
+        bottom: 33%;
+        height: 90px;
+        width: 52%;
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: left bottom;
+    }
+
+    .divider__windsock {
+        position: absolute;
+        bottom: 33%;
+        right: 5%;
+        height: 100px;
+        width: 10%;
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center bottom;
+    }
+
+    .divider__plane {
+        position: absolute;
+        right: 20%;
+        top: 10%;
+        height: 40px;
+        width: 50px;
+        background-size: contain;
+        background-repeat: no-repeat;
+    }
 }
 
 .watchman__divider--2 {
