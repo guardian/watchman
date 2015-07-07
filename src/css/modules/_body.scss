@@ -49,25 +49,14 @@
         width: 617px;
         height: 395px;
         padding-bottom: 0;
+        top: 0;
+        left: 60%;
     }
 
     @include mq(leftCol) {
         width: 925px;
         height: 591px;
-    }
-
-    .watchman__container--1 & {
-        position: relative;
-
-        @include mq(desktop) {
-            position: absolute;
-            top: 0;
-            left: 60%;
-        }
-
-        @include mq(leftCol) {
-            left: 50%;
-        }
+        left: 50%;
     }
 }
 
