@@ -1,5 +1,6 @@
 .watchman__header {
     position: relative;
+    z-index: 10;
     height: 900px; 
     color: $c-white;
     background: $c-yellow url("@@assetPath@@/assets/bg.jpg") repeat-x;
