@@ -77,7 +77,7 @@ module.exports = function(grunt) {
                     }]
                 },
                 files: [{
-                    src: ['css/main.css', 'index.html', 'js/main.js', 'boot.js'],
+                    src: ['css/main.css', 'index.html', 'js/main.js','js/modules/*.js', 'boot.js'],
                     cwd: 'build',
                     dest: 'build',
                     expand: true

@@ -3,6 +3,8 @@ define(['libs/throttle','libs/howler'], function(throttle,Howler){
     var animationTargets = [];
     var audioTargets = [];
     var audioFiles = [];
+    var currentAudio = 0;
+    var newAudio;
 
    	var windowHeight;
    	var windowWidth;
@@ -30,8 +32,8 @@ define(['libs/throttle','libs/howler'], function(throttle,Howler){
 
             for (var i=0; i<audioSections.length; i++){
                 audioTargets.push({
-                    el: audioTargets[i],
-                    audio: audiofiles[i]
+                    el: audioSections[i],
+                    audio: audioFiles[i]
                 })
             }
 
@@ -53,9 +55,23 @@ define(['libs/throttle','libs/howler'], function(throttle,Howler){
 
         initAudio:function(){
             audioFiles.push(new Howler.Howl({
-              urls: ['http://interactive.guim.co.uk/2015/06/photo-story-audio/Henley.mp3']
+              urls: ['http://interactive.guim.co.uk/2015/07/watchman-audio/1-train-carriage.mp3'],
+              volume: 0,
+              loop:true
             }))
-            console.log(audioFiles);
+            audioFiles.push(new Howler.Howl({
+              urls: ['http://interactive.guim.co.uk/2015/07/watchman-audio/2-train-station.mp3'],
+              volume: 0,
+              loop:true
+            }))
+            audioFiles.push(new Howler.Howl({
+              urls: ['http://interactive.guim.co.uk/2015/07/watchman-audio/3-car.mp3'],
+              volume: 0,
+              loop:true
+            }))
+
+            audioFiles[currentAudio].play();
+            audioFiles[currentAudio].fade(0, 1, 4000);
         },
 
         pauseAnimations: function(){
@@ -101,7 +117,26 @@ define(['libs/throttle','libs/howler'], function(throttle,Howler){
         },
 
         switchAudio: function(){
-            
+            for (var i=0; i<audioTargets.length; i++){
+                audioTargets[i].offset = audioTargets[i].el.getBoundingClientRect().top;
+                if(audioTargets[i].offset < 0){
+                    newAudio = i;
+                }
+            }
+
+            if(newAudio > -1 && newAudio !== currentAudio){
+                var oldAudio = currentAudio;
+                currentAudio = newAudio;
+
+                audioFiles[currentAudio].play();
+                audioFiles[currentAudio].fade(0, 1, 4000);
+                if(oldAudio > -1){
+                    audioFiles[oldAudio].fade(1, 0, 4000,function(){
+                        audioFiles[oldAudio].pause();
+                    });
+                }
+                
+            }
         }
     };
 
