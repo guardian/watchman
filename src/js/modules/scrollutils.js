@@ -5,6 +5,7 @@ define(['libs/throttle','libs/howler'], function(throttle,Howler){
     var audioFiles = [];
     var currentAudio = 0;
     var newAudio;
+    var muteState = false;
 
    	var windowHeight;
    	var windowWidth;
@@ -128,14 +129,28 @@ define(['libs/throttle','libs/howler'], function(throttle,Howler){
                 var oldAudio = currentAudio;
                 currentAudio = newAudio;
 
+                if(!muteState){
+                    audioFiles[currentAudio].play();
+                    audioFiles[currentAudio].fade(0, 1, 4000);
+                    if(oldAudio > -1){
+                        audioFiles[oldAudio].fade(1, 0, 4000,function(){
+                            audioFiles[oldAudio].pause();
+                        });
+                    }
+                } 
+            }
+        },
+
+        muteSwitch: function(muted){
+            muteState = muted;
+
+            if(!muteState){
                 audioFiles[currentAudio].play();
-                audioFiles[currentAudio].fade(0, 1, 4000);
-                if(oldAudio > -1){
-                    audioFiles[oldAudio].fade(1, 0, 4000,function(){
-                        audioFiles[oldAudio].pause();
-                    });
-                }
-                
+                audioFiles[currentAudio].fade(0, 1, 500);
+            }else{
+                audioFiles[currentAudio].fade(1,0, 500,function(){
+                    audioFiles[currentAudio].pause();
+                });
             }
         }
     };
