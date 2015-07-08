@@ -8,7 +8,7 @@
 .watchman__content {
     max-width: 500px;
 
-    @include mq(tablet) {
+    @include mq(desktop) {
         padding-left: 60px;
     }
 
