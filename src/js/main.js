@@ -1,11 +1,11 @@
 define([
     'libs/jquery',
     'modules/animate',
-    'modules/lazyload'
+    'modules/scrollutils'
 ], function(
     jQuery,
     animate,
-    lazyload
+    scrollutils
 ) {
     'use strict';
 
@@ -16,7 +16,7 @@ define([
 
         $(window).ready(function() {
             animate.init();
-            lazyload.init();
+            scrollutils.init();
         });
         
         $('.header__sound-button').on('click',function(e){
