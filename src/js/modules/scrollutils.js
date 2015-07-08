@@ -71,8 +71,11 @@ define(['libs/throttle','libs/howler'], function(throttle,Howler){
               loop:true
             }))
 
-            audioFiles[currentAudio].play();
-            audioFiles[currentAudio].fade(0, 1, 4000);
+            if(!muteState){
+                audioFiles[currentAudio].play();
+                audioFiles[currentAudio].fade(0, 1, 4000);
+            }
+            
         },
 
         pauseAnimations: function(){
