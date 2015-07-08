@@ -24,7 +24,14 @@
 
 .watchman__menu-segment--audiobook {
     overflow: auto;
-    width: 700px;
+
+    @include mq(desktop) {
+        width: 460px;
+    }
+
+    @include mq(leftCol) {
+        width: 700px;
+    }
 }
 
 .audiobook__button {
@@ -36,23 +43,33 @@
     float: left;
     margin-bottom: 50px;
     margin-right: 10px;
+    cursor: pointer;
 
     @include mq(desktop) {
+        margin-left: 4px;
+    }
+
+    @include mq(leftCol) {
         margin-left: 62px;
+    }
+
+    &:hover {
+        opacity: 0.8;
     }
 }
 
-.audiobook__label {
+.audiobook__icon {
     position: absolute;
     top: 0;
     right: 0;
     bottom: 0;
     left: 0;
+    width: 40%;
     margin: auto;
     color: black;
 }
 
-.audiobook__label--play {
+.audiobook__icon--pause {
     display: none;
 }
 
