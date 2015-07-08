@@ -1,0 +1,118 @@
+.watchman__menu {
+    background-color: $c-brown;
+
+    .gs-container {
+        overflow: auto;
+    }
+}
+
+.watchman__menu-inner {
+    border-top: 1px solid $c-white;
+    margin-top: 12px;
+    padding-top: 6px;
+    color: $c-white;
+}
+
+.watchman__menu__title {
+    font-family: $f-sans-serif-headline;
+}
+
+.watchman__menu-segment {
+    width: 220px;
+    float: left;
+}
+
+.watchman__menu-segment--audiobook {
+    overflow: auto;
+    width: 700px;
+}
+
+.audiobook__button {
+    position: relative;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background-color: $c-white;
+    float: left;
+    margin-bottom: 50px;
+    margin-right: 10px;
+
+    @include mq(desktop) {
+        margin-left: 62px;
+    }
+}
+
+.audiobook__label {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    margin: auto;
+    color: black;
+}
+
+.audiobook__label--play {
+    display: none;
+}
+
+.audiobook__description {
+    font-family: $f-serif-headline;
+    font-weight: 200;
+    line-height: 1;
+
+    span {
+        font-weight: 800;
+        display: block;
+    }
+}
+
+.watchman__menu-segment--ambient,
+.watchman__menu-segment--share {
+    position: relative;
+    margin-left: 20px;
+
+    &:before {
+        content: "";
+        position: absolute;
+        width: 1px;
+        left: -10px;
+        top: 0;
+        bottom: 0;
+        background-color: $c-white;
+    }
+}
+
+.watchman__menu-social {
+    padding-bottom: 0 !important;
+}
+
+
+.ambient__button {
+    position: relative;
+    border: 1px solid $c-white;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    cursor:pointer;
+
+    &:hover{
+        opacity:0.8;
+    }
+}
+
+.ambient__icon {
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    margin: auto;
+    width: 16px;
+    height: 13px;
+    fill: $c-white;
+}
+
+.ambient__icon--on {
+    display: none;
+}
