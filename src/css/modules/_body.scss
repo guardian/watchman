@@ -12,6 +12,10 @@
         padding-left: 60px;
     }
 
+    @include mq(leftCol) {
+        padding-left: 120px;
+    }
+
     p {
         margin-bottom: 0;
 
@@ -20,16 +24,20 @@
         }
 
         &.initial-paragraph {
+            font-size: 1.375rem;
+            line-height: 1.4;
             padding-top: 0;
         }
     }
 
     .initial-letter {
-        font-size: 5em;
+        font-size: 6.6em;
         line-height: 1em;
-        color: #fdd4bd;
-        float:left;
-        margin-right:20px;
+        float: left;
+        display: block;
+        margin-top: 1px;
+        margin-bottom: -24px;
+        margin-right: 4px;
     }
 }
 
@@ -48,15 +56,16 @@
         position: absolute;
         width: 617px;
         height: 395px;
+        margin-top: 0;
+        margin-left: 100px;
         padding-bottom: 0;
         top: 0;
-        left: 60%;
+        left: 50%;
     }
 
     @include mq(leftCol) {
-        width: 825px;
-        height: 591px;
-        left: 50%;
+        width: 700px;
+        height: 500px;
     }
 }
 
