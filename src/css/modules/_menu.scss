@@ -100,6 +100,10 @@
     }
 }
 
+.watchman__menu-segment--ambient.voiceoverplaying{
+    display:none;
+}
+
 .watchman__menu-social {
     padding-bottom: 0 !important;
 }
@@ -132,4 +136,65 @@
 
 .ambient__icon--off{
     display: none;
+}
+
+.watchman__menu-placeholder{
+    display:none;
+}
+
+// Fixed menu
+.watchman__menu-placeholder.fixed{
+    display:block;
+}
+.watchman__menu.fixed {
+    position: fixed;
+    top: 0;
+    z-index: 20;
+    width: 100%;
+    background-color:transparent;
+
+    .watchman__menu-segment--share{
+        display:none;
+    }
+    .watchman__menu-segment--ambient{
+        width:auto;
+        float:right;
+        &:before,h3{
+            display:none;
+        }
+    }
+    .watchman__menu-segment--audiobook{
+        float:right;
+        width:auto;
+    }
+    .ambient__button{
+        background-color:rgba(0,0,0,0.4);
+        border:none;
+    }
+    .audiobook__length{
+        display:none;
+    }
+    .audiobook__button{
+        width:32px;
+        height:32px;
+        background-color:rgba(0,0,0,0.4);
+    }
+    .audiobook__icon{
+        fill:#fff;
+    }
+    .audiobook__content:before{
+        content: 'Play voice over (22:00)';
+        display:block;
+        font-family:'Guardian Text Sans Web', Arial;
+        font-size:14px;
+        line-height: 1.2em;
+        margin-top:2px;
+        color:rgba(51,51,51,0.5);
+    }
+    .audiobook__description{
+        display:none;
+    }
+    .watchman__menu-inner{
+        border:none;
+    }
 }

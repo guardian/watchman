@@ -1,4 +1,5 @@
 define(['libs/throttle','libs/howler'], function(throttle,Howler){
+    var lazyloadContainers;
    	var lazyLoadTargets = [];
     var animationTargets = [];
     var audioTargets = [];
@@ -6,6 +7,9 @@ define(['libs/throttle','libs/howler'], function(throttle,Howler){
     var currentAudio = 0;
     var newAudio;
     var muteState = false;
+    var menuEl;
+    var menuHeight;
+    var menuFixed = false;
 
    	var windowHeight;
    	var windowWidth;
@@ -14,8 +18,9 @@ define(['libs/throttle','libs/howler'], function(throttle,Howler){
 
     var scrollutils = {
         init: function() {
-            var lazyLoadContainers = document.querySelectorAll('.lazyload-container');
+            lazyLoadContainers = document.querySelectorAll('.lazyload-container');
             var audioSections = document.querySelectorAll('.audio-section');
+            menuEl = document.querySelector('.watchman__menu');
             scrollutils.initAudio();
 
             for (var i=0; i<lazyLoadContainers.length; i++){
@@ -46,6 +51,7 @@ define(['libs/throttle','libs/howler'], function(throttle,Howler){
                 scrollutils.lazyload();
                 scrollutils.pauseAnimations();
                 scrollutils.switchAudio();
+                scrollutils.fixedNav();
             },500)
 
             window.addEventListener("resize", throttleLoader, false );
@@ -154,6 +160,25 @@ define(['libs/throttle','libs/howler'], function(throttle,Howler){
                 audioFiles[currentAudio].fade(1,0, 500,function(){
                     audioFiles[currentAudio].pause();
                 });
+            }
+        },
+
+        fixedNav: function(){
+            if(!menuFixed){
+                if(lazyLoadContainers[0].getBoundingClientRect().top + lazyLoadContainers[0].getBoundingClientRect().height + menuEl.getBoundingClientRect().height < 0){
+                    menuFixed = true;
+                    menuHeight = $(".watchman__menu").height();
+                    $(".watchman__menu-placeholder").height(menuHeight);
+                    $(".watchman__menu").addClass('fixed');
+                    $(".watchman__menu-placeholder").addClass('fixed');
+                }
+            }else{
+                console.log(menuHeight);
+                if(lazyLoadContainers[0].getBoundingClientRect().top + lazyLoadContainers[0].getBoundingClientRect().height + menuHeight > 0){
+                    menuFixed = false;
+                    $(".watchman__menu").removeClass('fixed');
+                    $(".watchman__menu-placeholder").removeClass('fixed');
+                }
             }
         }
     };
