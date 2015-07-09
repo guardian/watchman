@@ -159,6 +159,7 @@
     .watchman__menu-segment--ambient{
         width:auto;
         float:right;
+        margin-right:10px;
         &:before,h3{
             display:none;
         }
@@ -178,6 +179,7 @@
         width:32px;
         height:32px;
         background-color:rgba(0,0,0,0.4);
+        margin-left:0;
     }
     .audiobook__icon{
         fill:#fff;
