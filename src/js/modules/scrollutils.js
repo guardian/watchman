@@ -123,11 +123,11 @@ define(['libs/throttle','libs/howler'], function(throttle,Howler){
 
         	if(imageList.length > 0){
         		for(var i=0; i<imageList.length; i++){
-        			var imageSrc = "http://localhost:8000/assets/" + imageList[i].getAttribute('data-image');
+        			var imageSrc = "@@assetPath@@/assets/" + imageList[i].getAttribute('data-image');
         			imageList[i].style.backgroundImage = "url(" + imageSrc + ")";
         		}
         	}else if( $(lazyloadContainer).attr('data-image') ){
-        		var imageSrc = "http://localhost:8000/assets/" + lazyloadContainer.getAttribute('data-image');
+        		var imageSrc = "@@assetPath@@/assets/" + lazyloadContainer.getAttribute('data-image');
         		lazyloadContainer.style.backgroundImage = "url(" + imageSrc + ")";
         	}
         },
