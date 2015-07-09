@@ -1,7 +1,6 @@
 .watchman__header {
     position: relative;
     z-index: 10;
-    // height: 900px; 
     height:680px;
     color: $c-white;
     background: $c-dark-yellow url("@@assetPath@@/assets/bg.jpg") repeat-x;
@@ -10,16 +9,14 @@
     font-family: $f-serif-headline;
     font-weight: 900;
     line-height: 1.1;
-    @media(min-width:480px){
-        height:900px;
-    }
 
     @include mq(tablet) {
         background-position-y:-180px;
+        height: 740px;
     }
 
     .gs-container {
-        padding-top: 48px;
+        padding-top: 68px;
     }
 }
 
@@ -30,17 +27,12 @@
 
     @include mq(tablet) {
         font-size: 4.6rem;
-        text-indent: 100px;
         margin-bottom: -0.075em;
     }
 }
 
 .header__byline {
     font-size: 1.8rem;
-
-    @include mq(tablet) {
-          text-indent: 327px;
-    }
 }
 
 .header__description {
@@ -130,6 +122,7 @@
 .header-scene__plane {
     position: absolute;
     left: 80%;
+    top: 8%;
 }
 
 .header-scene__train {

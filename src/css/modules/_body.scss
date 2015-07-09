@@ -28,12 +28,17 @@
         }
 
         &.bookshop-paragraph,
-        &.trail-paragraph {
+        &.trail-paragraph,
+        &.credit-paragraph {
             margin-top: 22px;
             border-top: 1px dotted #dfdfdf;
             padding-top: 6px;
             margin-bottom: 34px;
             text-indent: 0;
+        }
+
+        &.credit-paragraph {
+            border-top-style: solid;
         }
     }
 
@@ -444,7 +449,7 @@
             background-position: 0px 0px;
         }
         100% {
-            background-position: 0px -240px;
+            background-position: 0px -264px;
         }
     }
 
@@ -456,7 +461,7 @@
         width: 240px;
         background-size: cover;
         background-repeat: no-repeat;
-        animation: chicken 1s infinite steps(7);
+        animation: chicken 1s infinite steps(8);
         will-change: background-position;
     }
 
