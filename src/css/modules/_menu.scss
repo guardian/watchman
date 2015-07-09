@@ -213,6 +213,7 @@
 // Fixed menu
 .watchman__menu-placeholder.fixed{
     display:block;
+    background-color:#aa5a4f;
 }
 .watchman__menu.fixed {
     position: fixed;
@@ -259,7 +260,7 @@
         fill:#fff;
     }
     .audiobook__content:before{
-        content: 'Play voice over (22:00)';
+        content: 'Play voice over (23:45)';
         display:block;
         font-family:'Guardian Text Sans Web', Arial;
         font-size:14px;

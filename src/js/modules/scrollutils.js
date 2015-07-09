@@ -10,6 +10,8 @@ define(['libs/throttle','libs/howler'], function(throttle,Howler){
     var menuEl;
     var menuHeight;
     var menuFixed = false;
+    var isMobile;
+    var mobileLoaded = false;
 
    	var windowHeight;
    	var windowWidth;
@@ -67,6 +69,13 @@ define(['libs/throttle','libs/howler'], function(throttle,Howler){
         },
 
         initAudio:function(){
+            if((/Android|iPhone|iPad|iPod|BlackBerry|Windows Phone/i).test(navigator.userAgent || navigator.vendor || window.opera) && window.innerWidth < 980){
+                muteState = true;
+                isMobile = true;
+                document.querySelector('.ambient__icon--off').style.display = 'block';
+                document.querySelector('.ambient__icon--on').style.display = 'none';
+            }
+            
             audioFiles.push(new Howler.Howl({
               urls: ['http://interactive.guim.co.uk/2015/07/watchman-audio/v2/1-train-interior.mp3'],
               volume: 0,
@@ -81,8 +90,9 @@ define(['libs/throttle','libs/howler'], function(throttle,Howler){
               urls: ['http://interactive.guim.co.uk/2015/07/watchman-audio/v2/3-car-interior.mp3'],
               volume: 0,
               loop:true
-            }))
-
+            })) 
+            
+            console.log(muteState)
             if(!muteState){
                 audioFiles[currentAudio].play();
                 audioFiles[currentAudio].fade(0, 1, 4000);
