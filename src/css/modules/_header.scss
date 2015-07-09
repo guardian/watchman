@@ -1,7 +1,8 @@
 .watchman__header {
     position: relative;
     z-index: 10;
-    height: 900px; 
+    // height: 900px; 
+    height:680px;
     color: $c-white;
     background: $c-dark-yellow url("@@assetPath@@/assets/bg.jpg") repeat-x;
     background-size: 100%;
@@ -9,6 +10,9 @@
     font-family: $f-serif-headline;
     font-weight: 900;
     line-height: 1.1;
+    @media(min-width:480px){
+        height:900px;
+    }
 
     @include mq(tablet) {
         background-position-y:-180px;
@@ -178,9 +182,16 @@
     position: relative;
     z-index: 5;
     display: flex;
-    height: 457px;
-    width: 140%;
-    margin-left: -20%;
+    
+    margin-left:-10%;
+    width:113%;
+    height:317px;
+    @media(min-width:480px){
+        height: 457px;
+        width: 140%;
+        margin-left: -20%;
+    }
+
     // animation: trainWobble 8s infinite cubic-bezier(0.01, 0.54, 0.87, 0.27);
 }
 
@@ -238,8 +249,18 @@
     }
 
     .train__wheel--1 {
-        left: 480px;
+        // left: 480px;
         background-image: url("@@assetPath@@/assets/header-train-wheel--1.png");
+        left: 70%;
+        height:90px;
+        width:90px;
+        top: 27px;
+        @media(min-width:480px){
+            left:480px;
+            top:0;
+            height:130px;
+            width:130px;
+        }
     }
 
     .train__wheel--2 {
