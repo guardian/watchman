@@ -1,7 +1,7 @@
 .watchman__header {
     position: relative;
     z-index: 10;
-    height:680px;
+    height:730px;
     color: $c-white;
     background: $c-dark-yellow url("@@assetPath@@/assets/bg.jpg") repeat-x;
     background-size: 100%;
@@ -17,6 +17,10 @@
 
     .gs-container {
         padding-top: 12px;
+
+        @include mq(478px, tablet) {
+            padding-top: 80px;
+        }
 
         @include mq(tablet) {
             padding-top: 68px;
@@ -50,6 +54,10 @@
 
 .header__byline {
     font-size: 1.8rem;
+
+    @include mq($until: tablet) {
+        color: $c-blue;
+    }
 }
 
 .header__description {
@@ -176,6 +184,10 @@
     left: 0;
     right: 0;
     bottom: 50px;
+
+    @include mq($until: 640px) {
+        left: auto;
+    }
 }
 
 @keyframes track {
@@ -219,15 +231,12 @@
 .train {
     position: relative;
     z-index: 5;
-    display: flex;
-    
-    margin-left:-10%;
-    width:113%;
-    height:317px;
-    @media(min-width:480px){
-        height: 457px;
-        width: 140%;
+    height: 457px;
+    width: 140%;
+
+    @include mq(640px) {
         margin-left: -20%;
+        display: flex;
     }
 
     // animation: trainWobble 8s infinite cubic-bezier(0.01, 0.54, 0.87, 0.27);
@@ -237,11 +246,19 @@
     background: url("@@assetPath@@/assets/header-train-left.png") repeat-x;
     float: left;
     background-position: right center;
+
+    @include mq($until: 640px) {
+        display: none;
+    }
 }
 
 .train__right {
     background: url("@@assetPath@@/assets/header-train-right.png") repeat-x;
     float: right;
+
+    @include mq($until: 640px) {
+        display: none;
+    }
 }
 
 .train__left,
