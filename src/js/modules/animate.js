@@ -13,6 +13,7 @@ define([
                 Skrollr.init({
                     forceHeight: false,
                     skrollrBody: 'js-context',
+                    smoothScrolling: false,
                     render: function(data) {
                         scrollTop = data.curTop;
                     }.bind(this)

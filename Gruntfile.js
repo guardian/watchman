@@ -16,6 +16,19 @@ module.exports = function(grunt) {
                 tasks: ['sass', 'autoprefixer', 'cssmin', 'requirejs', 'copy', 'htmlConvert', 'replace:remote', 'aws_s3']
             }
         },
+        imagemin: {                          // Task
+            dynamic: { 
+                options: {                       // Target options
+                    optimizationLevel: 5
+                },                        // Another target
+                files: [{
+                    expand: true,              // Enable dynamic expansion
+                    cwd: 'src/assets/',                   // Src matches are relative to this path
+                    src: ['**/*.{png,jpg,gif}'],   // Actual patterns to match
+                    dest: 'build/assets/'                  // Destination path prefix
+                }]
+            }
+        },
         sass: {
             dist: {
                 options: {
@@ -63,7 +76,7 @@ module.exports = function(grunt) {
                 files: [{
                     expand: true,
                     cwd: 'src',
-                    src: ['assets/**', 'js/**', 'index.html', 'boot.js'],
+                    src: ['js/**', 'index.html', 'boot.js'],
                     dest: 'build/'
                 }]
             }
@@ -161,8 +174,11 @@ module.exports = function(grunt) {
             }
         }
     });
-
+    
+    grunt.loadNpmTasks('grunt-contrib-imagemin');
+    grunt.registerTask('compress', ['imagemin']);
     grunt.registerTask('default', ['sass']);
     grunt.registerTask('local', ['connect', 'watch:local']);
     grunt.registerTask('remote', ['watch:remote']);
+
 };
