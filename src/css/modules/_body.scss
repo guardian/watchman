@@ -212,6 +212,21 @@
     }
 }
 
+.activeAnimation .window-outside--3 {
+    .window-layer--bg {
+        @include animateWindow(4358px);
+    }
+
+    .window-layer--river {
+        @include animateWindow(2657px);
+    }
+
+    .window-layer--moss {
+        @include animateWindow(2888px);
+        background-position: center top;
+    }
+}
+
 .watchman__divider {
     position: relative;
     z-index: 10;
