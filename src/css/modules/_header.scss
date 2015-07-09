@@ -17,6 +17,14 @@
 
     .gs-container {
         padding-top: 68px;
+
+        @include mq(desktop) {
+            padding-left: 80px;
+        }
+
+        @include mq(leftCol) {
+            padding-left: 140px;
+        }
     }
 }
 
@@ -24,10 +32,15 @@
     font-size: 3.2rem;
     line-height: 0.9;
     font-weight: 200;
+    color: $c-blue;
 
     @include mq(tablet) {
         font-size: 4.6rem;
         margin-bottom: -0.075em;
+    }
+
+    .header__a {
+        margin-left: -0.075em;
     }
 }
 
@@ -64,10 +77,16 @@
 
 // Animations
 .activeAnimation{
-    .header-scene__layer-1, .header-scene__layer-2 {
-        animation: headerLayers 10s infinite linear;
+    .header-scene__layer-1 {
+        animation: headerLayers 12s infinite linear;
+    }
+    .header-scene__layer-2 {
+        animation: headerLayers 8s infinite linear;
     }
     .header-scene__dust {
+        animation: dust 0.7s infinite linear;
+    }
+    .header-scene__dust-2 {
         animation: dust 0.7s infinite linear;
     }
     .header-scene__track {
@@ -116,7 +135,29 @@
     width: 100%;
     background: url("@@assetPath@@/assets/dust.png") repeat-x;
     padding-right: 1153px;
-    // animation: dust 0.7s infinite linear;
+}
+
+@keyframes dust2 {
+    0% {
+        transform: translate(-3640px);
+    }
+
+    100% {
+        transform: translate(0px);
+    }
+}
+
+.header-scene__dust-2 {
+    position: absolute;
+    z-index: 10;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 239px;
+    z-index: 2;
+    width: 100%;
+    background: url("@@assetPath@@/assets/landscape1-dust.png") repeat-x;
+    padding-right: 3640px;
 }
 
 .header-scene__plane {

@@ -76,10 +76,12 @@
         left: 50%;
     }
 
+/*
     @include mq(leftCol) {
         width: 545px;
         height: 390px;
     }
+*/
 }
 
 .watchman__window--outside {
@@ -322,10 +324,10 @@
 
     @keyframes windsockItToMe {
         0% {
-            background-position: 0px 0px;
+            background-position: 0px -700px;
         }
         100% {
-            background-position: 0px -700px;
+            background-position: 0px 0px;
         }
     }
 
