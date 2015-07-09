@@ -14,9 +14,9 @@ define([
     function init(el) {
         var muted =  false;
         var voiceoverplaying = false;
-        var voiceoverAudio =  new Howler.Howl({
-            urls: ['http://audio.theguardian.tv/audio/kip/environment/series/the-biggest-story-in-the-world/1426088034653/373/gnl.story.150311.jp.biggest_story_episode1.mp3']
-        })
+        var voiceoverLoaded = false;
+        var voiceoverAudio;
+
         @@template@@
         $(".content--interactive").html(template["index.html"]);
 
@@ -43,6 +43,13 @@ define([
             voiceoverplaying = !voiceoverplaying;
 
             if(voiceoverplaying){  
+                if(!voiceoverLoaded){
+                    voiceoverAudio =  new Howler.Howl({
+                        urls: ['http://audio.theguardian.tv/audio/kip/environment/series/the-biggest-story-in-the-world/1426088034653/373/gnl.story.150311.jp.biggest_story_episode1.mp3'],
+                        buffer:true
+                    })
+                }
+                
                 $('.audiobook__icon--play').css('display','none');
                 $('.audiobook__icon--pause').css('display','block');
 
@@ -51,6 +58,7 @@ define([
 
                 $('.watchman__menu-segment--ambient').addClass('voiceoverplaying')
                 voiceoverAudio.play();
+                voiceoverLoaded =  true;
                 muted = true;
                 scrollutils.muteSwitch(muted); 
             }else{
