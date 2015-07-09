@@ -2,7 +2,27 @@
     color: #333;
     background-color: $c-yellow;
     overflow: hidden;
-    padding-top: 30px;
+    padding-top: 6px;
+}
+
+.watchman__plain-link {
+    font-family: $f-sans-serif-text;
+
+    @include mq(desktop) {
+        padding-left: 60px;
+    }
+
+    @include mq(leftCol) {
+        padding-left: 120px;
+    }
+
+    a {
+        color: $c-brown;
+    }
+}
+
+.watchman__container--1 {
+    margin-top: 12px;
 }
 
 .watchman__content {
@@ -35,6 +55,10 @@
             padding-top: 6px;
             margin-bottom: 34px;
             text-indent: 0;
+
+            a {
+                color: $c-brown;
+            }
         }
 
         &.credit-paragraph {
@@ -234,18 +258,34 @@
 .activeAnimation .window-outside--2 {
     .window-layer--bg {
         @include animateWindow(4358px);
+        bottom: -90px;
+        animation-duration: 100s;
     }
+
     .window-layer--hills-1 {
-        bottom: 112px;
+        bottom: 22px;
+        animation-duration: 90s;
     }
-    .window-layer--trees {
-        @include animateWindow(3304px);
+
+    .window-layer--back-dust {
+        animation-duration: 30s;
+        bottom: -8px;
     }
+
     .window-layer--hills-2 {
         @include animateWindow(3012px);
+        bottom: -120px;
     }
+
+    .window-layer--dust {
+        animation-duration: 20s;
+        bottom: -40px;
+    }
+
     .window-layer--foreground {
         @include animateWindow(2657px);
+        animation-duration: 50s;
+        bottom: -14px;
     }
 }
 
@@ -288,6 +328,10 @@
     padding-bottom: 50%;
     margin: 30px 0;
     background-size: cover;
+
+    @include mq(desktop) {
+        padding-bottom: 40%;
+    }
 }
 
 .watchman__divider--1 {
@@ -320,6 +364,10 @@
         background-size: contain;
         background-repeat: no-repeat;
         background-position: left bottom;
+
+        @include mq(desktop) {
+            bottom: 48%;
+        }
     }
 
     @keyframes windsockItToMe {
@@ -341,16 +389,28 @@
         background-repeat: no-repeat;
         background-position: center bottom;
         animation: windsockItToMe 1s infinite steps(7);
+
+        @include mq(desktop) {
+            bottom: 53%;
+        }
+
+        @include mq($until: desktop) {
+            display: none;
+        }
     }
 
     .divider__plane {
         position: absolute;
         right: 10%;
-        top: 20%;
+        top: 10%;
         height: 40px;
         width: 50px;
         background-size: contain;
         background-repeat: no-repeat;
+
+        @include mq($until: desktop) {
+            display: none;
+        }
     }
 }
 
@@ -457,7 +517,7 @@
 
     .divider__chicken {
         position: absolute;
-        top: 48%;
+        top: 46%;
         left: 29%;
         height: 33px;
         width: 240px;
@@ -465,6 +525,10 @@
         background-repeat: no-repeat;
         animation: chicken 1s infinite steps(8);
         will-change: background-position;
+
+        @include mq($until: desktop) {
+            display: none;
+        }
     }
 
     .divider__car {
@@ -478,5 +542,11 @@
         background-size: cover;
         background-repeat: no-repeat;
         will-change: transform;
+
+        @include mq(desktop) {
+            bottom: 21%;
+            width: 61%;
+            height: 42%;
+        }
     }
 }

@@ -16,7 +16,11 @@
     }
 
     .gs-container {
-        padding-top: 68px;
+        padding-top: 12px;
+
+        @include mq(tablet) {
+            padding-top: 68px;
+        }
 
         @include mq(desktop) {
             padding-left: 80px;
@@ -245,6 +249,10 @@
     background-size: contain;
     flex-grow: 2;
     min-width: 3px;
+
+    @include mq($until: 774px) {
+        background-size: cover;
+    }
 }
 
 .header-scene__train__under-carriage {
