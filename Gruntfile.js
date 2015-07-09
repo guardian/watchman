@@ -13,7 +13,7 @@ module.exports = function(grunt) {
             },
             remote: {
                 files: ['src/css/**/*.scss', 'src/index.html', 'src/js/**/*.js', 'src/boot.js'],
-                tasks: ['sass', 'autoprefixer', 'cssmin', 'requirejs', 'copy', 'htmlConvert', 'replace:remote', 'aws_s3']
+                tasks: ['sass', 'autoprefixer', 'cssmin', 'copy', 'htmlConvert', 'replace:html', 'requirejs', 'replace:remote', 'aws_s3']
             }
         },
         sass: {
@@ -146,16 +146,12 @@ module.exports = function(grunt) {
                     bucket: 'gdn-cdn',
                 },
                 files: [{
-                    src: ['build'],
+                    expand: true,
+                    cwd: 'build',
+                    src: ['**'],
                     dest: options.location,
                     params: {
                         CacheControl: 'max-age=60'
-                    }
-                },{
-                    src: ['build/assets/*'],
-                    dest: options.location,
-                    params: {
-                        CacheControl: 'max-age=2678400'
                     }
                 }]
             }
