@@ -17,10 +17,7 @@ module.exports = function(grunt) {
             }
         },
         imagemin: {                          // Task
-            dynamic: { 
-                options: {                       // Target options
-                    optimizationLevel: 5
-                },                        // Another target
+            dynamic: {                         // Another target
                 files: [{
                     expand: true,              // Enable dynamic expansion
                     cwd: 'src/assets/',                   // Src matches are relative to this path
