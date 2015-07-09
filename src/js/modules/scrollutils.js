@@ -24,9 +24,15 @@ define(['libs/throttle','libs/howler'], function(throttle,Howler){
             scrollutils.initAudio();
 
             for (var i=0; i<lazyLoadContainers.length; i++){
+                var offsetTop;
+                if(lazyLoadContainers[i].className.indexOf('watchman__window') > -1){
+                    offsetTop = lazyLoadContainers[i].parentElement.parentElement.offsetTop;
+                }else{
+                    offsetTop = lazyLoadContainers[i].offsetTop
+                }
                 lazyLoadTargets.push({
                     el: lazyLoadContainers[i],
-                    position: lazyLoadContainers[i].offsetTop
+                    position: offsetTop
                 })
                 animationTargets.push({
                     el: lazyLoadContainers[i],
@@ -62,17 +68,17 @@ define(['libs/throttle','libs/howler'], function(throttle,Howler){
 
         initAudio:function(){
             audioFiles.push(new Howler.Howl({
-              urls: ['http://interactive.guim.co.uk/2015/07/watchman-audio/1-train-carriage.mp3'],
+              urls: ['http://interactive.guim.co.uk/2015/07/watchman-audio/v2/1-train-interior.mp3'],
               volume: 0,
               loop:true
             }))
             audioFiles.push(new Howler.Howl({
-              urls: ['http://interactive.guim.co.uk/2015/07/watchman-audio/2-train-station.mp3'],
+              urls: ['http://interactive.guim.co.uk/2015/07/watchman-audio/v2/2-train-exterior.mp3'],
               volume: 0,
               loop:true
             }))
             audioFiles.push(new Howler.Howl({
-              urls: ['http://interactive.guim.co.uk/2015/07/watchman-audio/3-car.mp3'],
+              urls: ['http://interactive.guim.co.uk/2015/07/watchman-audio/v2/3-car-interior.mp3'],
               volume: 0,
               loop:true
             }))
@@ -173,7 +179,6 @@ define(['libs/throttle','libs/howler'], function(throttle,Howler){
                     $(".watchman__menu-placeholder").addClass('fixed');
                 }
             }else{
-                console.log(menuHeight);
                 if(lazyLoadContainers[0].getBoundingClientRect().top + lazyLoadContainers[0].getBoundingClientRect().height + menuHeight > 0){
                     menuFixed = false;
                     $(".watchman__menu").removeClass('fixed');

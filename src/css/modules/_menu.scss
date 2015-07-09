@@ -216,10 +216,15 @@
 }
 .watchman__menu.fixed {
     position: fixed;
-    top: 0;
+    bottom: 0;
     z-index: 20;
     width: 100%;
     background-color:transparent;
+    display:none;
+    height:60px;
+    @include mq(tablet){
+        display:block;
+    }
 
     .watchman__menu-segment--share{
         display:none;
