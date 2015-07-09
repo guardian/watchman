@@ -55,6 +55,10 @@
             padding-top: 6px;
             margin-bottom: 34px;
             text-indent: 0;
+
+            a {
+                color: $c-brown;
+            }
         }
 
         &.credit-paragraph {
@@ -403,6 +407,10 @@
         width: 50px;
         background-size: contain;
         background-repeat: no-repeat;
+
+        @include mq($until: desktop) {
+            display: none;
+        }
     }
 }
 
@@ -517,6 +525,10 @@
         background-repeat: no-repeat;
         animation: chicken 1s infinite steps(8);
         will-change: background-position;
+
+        @include mq($until: desktop) {
+            display: none;
+        }
     }
 
     .divider__car {
