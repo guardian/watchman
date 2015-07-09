@@ -13,19 +13,26 @@ module.exports = function(grunt) {
             },
             remote: {
                 files: ['src/css/**/*.scss', 'src/index.html', 'src/js/**/*.js', 'src/boot.js'],
-                tasks: ['sass', 'autoprefixer', 'cssmin', 'copy', 'htmlConvert', 'replace:html', 'requirejs', 'replace:remote', 'aws_s3']
+                tasks: ['sass', 'autoprefixer', 'cssmin', 'copy','pngmin', 'htmlConvert', 'replace:html', 'requirejs', 'replace:remote', 'aws_s3']
             }
         },
-        imagemin: {                          // Task
-            dynamic: {                         // Another target
-                files: [{
-                    expand: true,              // Enable dynamic expansion
-                    cwd: 'src/assets/',                   // Src matches are relative to this path
-                    src: ['**/*.{png,jpg,gif}'],   // Actual patterns to match
-                    dest: 'build/assets/'                  // Destination path prefix
-                }]
+        pngmin: {
+            compile: {
+              options: {
+                ext: '.png',
+                colors: 128,
+                force: true
+              },
+              files: [
+                {
+                  expand: true, // required option 
+                  src: ['*.png'],
+                  cwd: 'src/assets/',
+                  dest: 'build/assets/'
+                }
+              ]
             }
-        },
+          },
         sass: {
             dist: {
                 options: {
@@ -73,7 +80,7 @@ module.exports = function(grunt) {
                 files: [{
                     expand: true,
                     cwd: 'src',
-                    src: ['js/**', 'index.html', 'boot.js', 'assets/**'],
+                    src: ['js/**', 'index.html', 'boot.js', 'assets/*.jpg','assets/*.svg'],
                     dest: 'build/'
                 }]
             }
@@ -168,8 +175,10 @@ module.exports = function(grunt) {
         }
     });
     
-    grunt.loadNpmTasks('grunt-contrib-imagemin');
-    grunt.registerTask('compress', ['imagemin']);
+    // grunt.loadNpmTasks('grunt-contrib-imagemin');
+    // grunt.registerTask('compress', ['imagemin']);
+    grunt.loadNpmTasks('grunt-pngmin');
+    grunt.registerTask('compress', ['pngmin']);
     grunt.registerTask('default', ['sass']);
     grunt.registerTask('local', ['connect', 'watch:local']);
     grunt.registerTask('remote', ['watch:remote']);
