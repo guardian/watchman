@@ -1,7 +1,6 @@
 .watchman__header {
     position: relative;
     z-index: 10;
-    // height: 900px; 
     height:680px;
     color: $c-white;
     background: $c-dark-yellow url("@@assetPath@@/assets/bg.jpg") repeat-x;
@@ -10,61 +9,47 @@
     font-family: $f-serif-headline;
     font-weight: 900;
     line-height: 1.1;
-    @media(min-width:480px){
-        height:900px;
-    }
 
     @include mq(tablet) {
         background-position-y:-180px;
+        height: 740px;
     }
 
     .gs-container {
-        padding-top: 48px;
+        padding-top: 68px;
+
+        @include mq(desktop) {
+            padding-left: 80px;
+        }
+
+        @include mq(leftCol) {
+            padding-left: 140px;
+        }
     }
 }
 
 .header__title {
     font-size: 3.2rem;
     line-height: 0.9;
+    font-weight: 200;
+    color: $c-blue;
 
     @include mq(tablet) {
         font-size: 4.6rem;
+        margin-bottom: -0.075em;
+    }
+
+    .header__a {
+        margin-left: -0.075em;
     }
 }
-
-// .header__title {
-//     width:100%;
-//     max-width:620px;
-//     position: relative;
-//     position: absolute;
-//     height:200px;
-//     top:200px;
-//     img{
-//         position: absolute;
-//         &.title_goset{
-//             max-width:244px;
-//         }
-//         &.title_watchman{
-//             max-width:460px;
-//             top:90px;
-//             left:120px;
-//         }
-//     }
-// }
 
 .header__byline {
     font-size: 1.8rem;
 }
 
-.header__title,
-.header__byline {
-    @include mq(tablet) {
-        text-indent: 100px;
-    }
-}
-
 .header__description {
-    color: $c-orange;
+    color: $c-yellow;
     font-size: 1.8rem;
 }
 
@@ -92,10 +77,16 @@
 
 // Animations
 .activeAnimation{
-    .header-scene__layer-1, .header-scene__layer-2 {
-        animation: headerLayers 10s infinite linear;
+    .header-scene__layer-1 {
+        animation: headerLayers 12s infinite linear;
+    }
+    .header-scene__layer-2 {
+        animation: headerLayers 8s infinite linear;
     }
     .header-scene__dust {
+        animation: dust 0.7s infinite linear;
+    }
+    .header-scene__dust-2 {
         animation: dust 0.7s infinite linear;
     }
     .header-scene__track {
@@ -144,12 +135,35 @@
     width: 100%;
     background: url("@@assetPath@@/assets/dust.png") repeat-x;
     padding-right: 1153px;
-    // animation: dust 0.7s infinite linear;
+}
+
+@keyframes dust2 {
+    0% {
+        transform: translate(-3640px);
+    }
+
+    100% {
+        transform: translate(0px);
+    }
+}
+
+.header-scene__dust-2 {
+    position: absolute;
+    z-index: 10;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 239px;
+    z-index: 2;
+    width: 100%;
+    background: url("@@assetPath@@/assets/landscape1-dust.png") repeat-x;
+    padding-right: 3640px;
 }
 
 .header-scene__plane {
     position: absolute;
     left: 80%;
+    top: 8%;
 }
 
 .header-scene__train {

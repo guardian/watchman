@@ -28,12 +28,17 @@
         }
 
         &.bookshop-paragraph,
-        &.trail-paragraph {
+        &.trail-paragraph,
+        &.credit-paragraph {
             margin-top: 22px;
             border-top: 1px dotted #dfdfdf;
             padding-top: 6px;
             margin-bottom: 34px;
             text-indent: 0;
+        }
+
+        &.credit-paragraph {
+            border-top-style: solid;
         }
     }
 
@@ -71,10 +76,12 @@
         left: 50%;
     }
 
+/*
     @include mq(leftCol) {
         width: 545px;
         height: 390px;
     }
+*/
 }
 
 .watchman__window--outside {
@@ -317,10 +324,10 @@
 
     @keyframes windsockItToMe {
         0% {
-            background-position: 0px 0px;
+            background-position: 0px -700px;
         }
         100% {
-            background-position: 0px -700px;
+            background-position: 0px 0px;
         }
     }
 
@@ -444,7 +451,7 @@
             background-position: 0px 0px;
         }
         100% {
-            background-position: 0px -240px;
+            background-position: 0px -264px;
         }
     }
 
@@ -456,7 +463,7 @@
         width: 240px;
         background-size: cover;
         background-repeat: no-repeat;
-        animation: chicken 1s infinite steps(7);
+        animation: chicken 1s infinite steps(8);
         will-change: background-position;
     }
 
