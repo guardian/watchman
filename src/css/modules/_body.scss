@@ -336,13 +336,13 @@
 
 @keyframes plantSwag {
     0% {
-        transform: rotate(10deg);
+        transform: rotate(4deg);
     }
-    20% {
+    50% {
         transform: rotate(-3deg);
     }
     100% {
-        transform: rotate(10deg);
+        transform: rotate(4deg);
     }
 }
 
@@ -368,7 +368,7 @@
         background-size: contain;
         background-repeat: no-repeat;
         background-position: center bottom;
-        animation: plantSwag 10s infinite ease-in-out;
+        animation: plantSwag 10s infinite cubic-bezier(0.71, 1.67, 0.62, 1.36);
         transform-origin: 50% 200%;
     }
 
@@ -381,7 +381,7 @@
         background-size: contain;
         background-repeat: no-repeat;
         background-position: center bottom;
-        animation: plantSwag 10s infinite ease-in-out;
+        animation: plantSwag 10s infinite cubic-bezier(0.71, 1.67, 0.62, 1.36);
         transform-origin: 50% 200%;
         animation-delay: -0.5s;
     }
@@ -395,7 +395,7 @@
         background-size: contain;
         background-repeat: no-repeat;
         background-position: center bottom;
-        animation: plantSwag 10s infinite ease-in-out;
+        animation: plantSwag 10s infinite cubic-bezier(0.71, 1.67, 0.62, 1.36);
         transform-origin: 50% 200%;
         animation-delay: -1s;
     }
@@ -409,7 +409,7 @@
         background-size: contain;
         background-repeat: no-repeat;
         background-position: center bottom;
-        animation: plantSwag 10s infinite ease-in-out;
+        animation: plantSwag 10s infinite cubic-bezier(0.71, 1.67, 0.62, 1.36);
         transform-origin: 50% 200%;
         animation-delay: -1.5s
     }
