@@ -99,17 +99,16 @@
     right: 0;
     bottom: 0;
     left: 0;
-    height: 500px;
+    height: 360px;
     width: 100%;
     margin: auto;
     padding-right: 3640px;
     background-position-y: bottom;
     background-repeat: repeat-x;
-    
 }
 .activeAnimation .window-layer {
-    animation: slide 20s linear infinite;
-    will-change: background;
+    animation: slide 60s linear infinite;
+    will-change: transform;
 }
 
 @keyframes slide {
@@ -119,6 +118,21 @@
 
     100% {
         transform: translateX(0px);
+    }
+}
+
+@mixin animateWindow($width) {
+    animation-name: slide#{$width};
+    padding-right: $width;
+
+    @keyframes slide#{$width} {
+        0% {
+            transform: translateX(-$width);
+        }
+
+        100% {
+            transform: translateX(0px);
+        }
     }
 }
 
@@ -177,6 +191,39 @@
 
     .window-layer--rocks {
         animation-duration: 60s;
+    }
+}
+
+.activeAnimation .window-outside--2 {
+    .window-layer--bg {
+        @include animateWindow(4358px);
+    }
+    .window-layer--hills-1 {
+        bottom: 112px;
+    }
+    .window-layer--trees {
+        @include animateWindow(3304px);
+    }
+    .window-layer--hills-2 {
+        @include animateWindow(3012px);
+    }
+    .window-layer--foreground {
+        @include animateWindow(2657px);
+    }
+}
+
+.activeAnimation .window-outside--3 {
+    .window-layer--bg {
+        @include animateWindow(4358px);
+    }
+
+    .window-layer--river {
+        @include animateWindow(2657px);
+    }
+
+    .window-layer--moss {
+        @include animateWindow(2888px);
+        background-position: center top;
     }
 }
 
