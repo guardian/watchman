@@ -59,6 +59,10 @@
             a {
                 color: $c-brown;
             }
+
+            strong {
+                font-family: $f-serif-headline;
+            }
         }
 
         &.credit-paragraph {
