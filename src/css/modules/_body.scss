@@ -284,7 +284,21 @@
     }
 }
 
+@keyframes plantSwag {
+    0% {
+        transform: rotate(10deg);
+    }
+    20% {
+        transform: rotate(-3deg);
+    }
+    100% {
+        transform: rotate(10deg);
+    }
+}
+
 .watchman__divider--2 {
+    overflow: hidden;
+
     .divider__background {
         position: absolute;
         top: 0;
@@ -293,5 +307,60 @@
         left: 0;
         background-size: cover;
         background-position: center bottom;
+    }
+
+    .divider__plant--1 {
+        position: absolute;
+        bottom: -5px;
+        right: 29%;
+        height: 22%;
+        width: 20%;
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center bottom;
+        animation: plantSwag 10s infinite ease-in-out;
+        transform-origin: 50% 200%;
+    }
+
+    .divider__plant--2 {
+        position: absolute;
+        bottom: -11px;
+        right: 13%;
+        height: 24%;
+        width: 20%;
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center bottom;
+        animation: plantSwag 10s infinite ease-in-out;
+        transform-origin: 50% 200%;
+        animation-delay: -0.5s;
+    }
+
+    .divider__plant--3 {
+        position: absolute;
+        bottom: -5px;
+        right: 4%;
+        height: 12%;
+        width: 20%;
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center bottom;
+        animation: plantSwag 10s infinite ease-in-out;
+        transform-origin: 50% 200%;
+        animation-delay: -1s;
+    }
+
+    .divider__plant--4 {
+        position: absolute;
+        bottom: -5px;
+        right: -6%;
+        height: 22%;
+        width: 20%;
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center bottom;
+        animation: plantSwag 10s infinite ease-in-out;
+        transform-origin: 50% 200%;
+        animation-delay: -1.5s
     }
 }
