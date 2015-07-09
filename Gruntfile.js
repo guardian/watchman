@@ -83,7 +83,7 @@ module.exports = function(grunt) {
                 options: {
                     patterns: [{
                         match: /@@assetPath@@/g,
-                        replacement: 'http://localhost:8000'
+                        replacement: 'http://10.233.72.57:8000/'
                     }]
                 },
                 files: [{

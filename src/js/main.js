@@ -39,13 +39,17 @@ define([
             scrollutils.muteSwitch(muted);    
         })
 
+        if((/Android|iPhone|iPad|iPod|BlackBerry|Windows Phone/i).test(navigator.userAgent || navigator.vendor || window.opera) && window.innerWidth < 980){
+            muted = true;
+        }
+
         $('.audiobook__button').on('click',function(e){
             voiceoverplaying = !voiceoverplaying;
 
             if(voiceoverplaying){  
                 if(!voiceoverLoaded){
                     voiceoverAudio =  new Howler.Howl({
-                        urls: ['http://audio.theguardian.tv/audio/kip/environment/series/the-biggest-story-in-the-world/1426088034653/373/gnl.story.150311.jp.biggest_story_episode1.mp3'],
+                        urls: ['http://interactive.guim.co.uk/2015/07/watchman-audio/v2/voiceover_final.mp3'],
                         buffer:true
                     })
                 }
