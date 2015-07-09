@@ -45,11 +45,18 @@ define([
             if(voiceoverplaying){  
                 $('.audiobook__icon--play').css('display','none');
                 $('.audiobook__icon--pause').css('display','block');
+
+                $('.ambient__icon--off').css('display','block')
+                $('.ambient__icon--on').css('display','none')
+
+                $('.watchman__menu-segment--ambient').addClass('voiceoverplaying')
                 voiceoverAudio.play();
-                scrollutils.muteSwitch(true); 
+                muted = true;
+                scrollutils.muteSwitch(muted); 
             }else{
                 $('.audiobook__icon--play').css('display','block')
                 $('.audiobook__icon--pause').css('display','none')
+                $('.watchman__menu-segment--ambient').removeClass('voiceoverplaying')
                 voiceoverAudio.pause();
             }
 
