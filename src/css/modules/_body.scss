@@ -229,6 +229,39 @@
     }
 }
 
+.activeAnimation .window-outside--4 {
+    bottom: 25%;
+
+    .window-layer--bg {
+        @include animateWindow(2039px);
+        animation-duration: 100s;
+    }
+
+    .window-layer--hills {
+        @include animateWindow(1820px);
+        animation-duration: 90s;
+        bottom: 25px;
+    }
+
+    .window-layer--town {
+        @include animateWindow(2141px);
+        animation-duration: 80s;
+        bottom: 10px;
+    }
+
+    .window-layer--dust {
+        @include animateWindow(3640px);
+        animation-duration: 10s;
+        bottom: 10px
+    }
+
+    .window-layer--closetown {
+        @include animateWindow(2136px);
+        animation-duration: 20s;
+        bottom: 28px;
+    }
+}
+
 .watchman__divider {
     position: relative;
     z-index: 10;
@@ -269,15 +302,25 @@
         background-position: left bottom;
     }
 
+    @keyframes windsockItToMe {
+        0% {
+            background-position: 0px 0px;
+        }
+        100% {
+            background-position: 0px -700px;
+        }
+    }
+
     .divider__windsock {
         position: absolute;
         bottom: 40%;
         right: 5%;
         height: 100px;
-        width: 10%;
-        background-size: contain;
+        width: 86px;
+        background-size: cover;
         background-repeat: no-repeat;
         background-position: center bottom;
+        animation: windsockItToMe 1s infinite steps(7);
     }
 
     .divider__plane {
