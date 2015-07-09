@@ -55,8 +55,8 @@
     @include mq(desktop) {
         display: block;
         position: absolute;
-        width: 617px;
-        height: 395px;
+        width: 377px;
+        height: 275px;
         margin-top: 0;
         margin-left: 100px;
         padding-bottom: 0;
@@ -65,8 +65,18 @@
     }
 
     @include mq(leftCol) {
-        width: 700px;
-        height: 500px;
+        width: 545px;
+        height: 390px;
+    }
+}
+
+.watchman__window--outside {
+    margin-top: 20px;
+    background-size: contain;
+    background-repeat: no-repeat;
+
+    @include mq($until: desktop) {
+          padding-bottom: 48%;
     }
 }
 
@@ -212,21 +222,6 @@
     }
 }
 
-.activeAnimation .window-outside--3 {
-    .window-layer--bg {
-        @include animateWindow(4358px);
-    }
-
-    .window-layer--river {
-        @include animateWindow(2657px);
-    }
-
-    .window-layer--moss {
-        @include animateWindow(2888px);
-        background-position: center top;
-    }
-}
-
 .watchman__divider {
     position: relative;
     z-index: 10;
@@ -286,5 +281,17 @@
         width: 50px;
         background-size: contain;
         background-repeat: no-repeat;
+    }
+}
+
+.watchman__divider--2 {
+    .divider__background {
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        background-size: cover;
+        background-position: center bottom;
     }
 }
