@@ -18,7 +18,7 @@ define([
         var voiceoverAudio;
 
         @@template@@
-        $(".content--interactive").html(template["index.html"]);
+        $(".content--interactive, .article--feature").html(template["index.html"]);
 
         $(window).ready(function() {
             animate.init();
