@@ -21,6 +21,11 @@
     }
 }
 
+.lazyload-container *{
+    box-sizing:content-box;
+    -webkit-box-sizing:content-box;
+}
+
 .watchman__container--1 {
     margin-top: 12px;
 }
@@ -41,7 +46,7 @@
         text-indent: 2em;
 
         &.initial-paragraph {
-            font-size: 1.375rem;
+            font-size: 1.375em;
             line-height: 1.4;
             padding-top: 0;
             text-indent: 0;
