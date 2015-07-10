@@ -13,7 +13,7 @@ module.exports = function(grunt) {
             },
             remote: {
                 files: ['src/css/**/*.scss', 'src/index.html', 'src/js/**/*.js', 'src/boot.js'],
-                tasks: ['sass', 'autoprefixer', 'cssmin', 'copy','pngmin', 'htmlConvert', 'replace:html', 'requirejs', 'replace:remote', 'aws_s3']
+                tasks: ['sass', 'autoprefixer', 'cssmin', 'copy', 'pngmin', 'htmlConvert', 'replace:html', 'requirejs', 'replace:remote', 'aws_s3']
             }
         },
         pngmin: {
@@ -80,7 +80,7 @@ module.exports = function(grunt) {
                 files: [{
                     expand: true,
                     cwd: 'src',
-                    src: ['js/**', 'index.html', 'boot.js', 'assets/*.jpg','assets/*.svg'],
+                    src: ['js/**', 'index.html', 'boot.js', 'assets/*.jpg','assets/**'],
                     dest: 'build/'
                 }]
             }

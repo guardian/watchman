@@ -47,6 +47,10 @@
         margin-bottom: -0.075em;
     }
 
+    @include mq(wide) {
+        color: $c-white;
+    }
+
     .header__a {
         margin-left: -0.075em;
     }
