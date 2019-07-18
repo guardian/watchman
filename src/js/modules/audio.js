@@ -78,6 +78,18 @@ export default {
         }
     },
 
+    switchAmbientAudio: function(newTrack) {
+        if (ambientPlaying) {
+            ambientAudio[newTrack].play();
+            ambientAudio[newTrack].fade(0, 0.8, 4000);
+            ambientAudio[ambientTrack].fade(0.8, 0, 4000, function() {
+                ambientAudio[ambientTrack].pause();
+            });
+
+            ambientTrack = newTrack;
+        }
+    },
+
     toggleAudioBookAudio: function() {
         voiceoverPlaying = !voiceoverPlaying;
 
