@@ -3,11 +3,11 @@
     z-index: 10;
     height:730px;
     color: $c-white;
-    background: $c-dark-yellow url("{{ path }}/assets/bg.jpg") repeat-x;
+    background: $c-dark-blue url("{{ path }}/assets/bg.jpg") repeat-x;
     background-size: 100%;
     overflow: hidden;
     font-family: 'Guardian Egyptian Web';
-    font-weight: 900;
+    font-weight: 700;
     line-height: 1.1;
 
     @include mq(tablet) {
@@ -15,8 +15,9 @@
         height: 740px;
     }
 
-    .gs-container {
+    .uit-container {
         padding-top: 12px;
+        border: 0;
 
         @include mq(478px, tablet) {
             padding-top: 80px;
@@ -44,7 +45,6 @@
 
     @include mq(tablet) {
         font-size: 4.6em;
-        margin-bottom: -0.075em;
     }
 
     @include mq(wide) {

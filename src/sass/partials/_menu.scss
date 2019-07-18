@@ -1,14 +1,13 @@
 .watchman__menu {
     background-color: $c-brown;
 
-    .gs-container {
+    .uit-container {
         overflow: auto;
+        border-color: $c-white;
     }
 }
 
 .watchman__menu-inner {
-    border-top: 1px solid $c-white;
-    margin-top: 12px;
     padding-top: 6px;
     color: $c-white;
     overflow: hidden;
@@ -82,11 +81,11 @@
 
 .audiobook__description {
     font-family: 'Guardian Egyptian Web';
-    font-weight: 200;
+    font-weight: 400;
     line-height: 1;
 
     span {
-        font-weight: 800;
+        font-weight: 700;
         display: block;
     }
 }

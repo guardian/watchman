@@ -2,11 +2,12 @@
     color: #333;
     background-color: $c-background;
     overflow: hidden;
-    padding-top: 6px;
 }
 
 .watchman__plain-link {
     font-family: 'Guardian Sans Web';
+    margin: 0;
+    padding: 3px 0;
 
     @include mq(desktop) {
         padding-left: 60px;
@@ -21,13 +22,13 @@
     }
 }
 
-.lazyload-container *{
+.lazyload-container * {
     box-sizing:content-box;
     -webkit-box-sizing:content-box;
 }
 
 .watchman__container--1 {
-    margin-top: 12px;
+    padding-top: 12px;
 }
 
 .watchman__content {
