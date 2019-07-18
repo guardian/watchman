@@ -1,6 +1,9 @@
 import {Howler, Howl} from 'howler';
 
 let muted = false,
+    ambientLoaded = false,
+    ambientPlaying = false,
+    ambientAudio = [],
     voiceoverPlaying = false,
     voiceoverLoaded = false,
     voiceoverAudio
@@ -29,22 +32,47 @@ export default {
 
     toggleAmbientAudio: function() {
         muted = !muted;
+        ambientPlaying = !ambientPlaying;
 
         if (muted) {
-            $('.ambient__icon--off').css('display','block')
-            $('.ambient__icon--on').css('display','none')
+            $('.ambient__icon--off').css('display','block');
+            $('.ambient__icon--on').css('display','none');
         } else {
-            $('.ambient__icon--off').css('display','none')
-            $('.ambient__icon--on').css('display','block')
+            $('.ambient__icon--off').css('display','none');
+            $('.ambient__icon--on').css('display','block');
         }
 
-        // scrollutils.muteSwitch(muted);
+        if (ambientPlaying) {
+            if (!voiceLoaded) {
+                ambientAudio.push(new Howl({
+                  src: ['http://interactive.guim.co.uk/2015/07/watchman-audio/v2/1-train-interior.mp3'],
+                  volume: 0,
+                  loop:true
+                }));
+
+                ambientAudio.push(new Howl({
+                  src: ['http://interactive.guim.co.uk/2015/07/watchman-audio/v2/2-train-interior.mp3'],
+                  volume: 0,
+                  loop:true
+                }));
+
+                ambientAudio.push(new Howl({
+                  src: ['http://interactive.guim.co.uk/2015/07/watchman-audio/v2/2-train-exterior.mp3'],
+                  volume: 0,
+                  loop:true
+                }));
+
+                ambientAudio.push(new Howl({
+                  src: ['http://interactive.guim.co.uk/2015/07/watchman-audio/v2/3-car-interior.mp3'],
+                  volume: 0,
+                  loop:true
+                }));
+            }
+        }
     },
 
     toggleAudioBookAudio: function() {
         voiceoverPlaying = !voiceoverPlaying;
-
-        console.log(Howler);
 
         if(voiceoverPlaying) {
             if(!voiceoverLoaded){
