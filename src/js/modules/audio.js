@@ -1,9 +1,10 @@
 import {Howler, Howl} from 'howler';
 
 let muted = false,
+    ambientPlaying = true,
     ambientLoaded = false,
-    ambientPlaying = false,
     ambientAudio = [],
+    ambientTrack = 0,
     voiceoverPlaying = false,
     voiceoverLoaded = false,
     voiceoverAudio
@@ -11,6 +12,7 @@ let muted = false,
 export default {
     init: function() {
         this.muteOnMobile();
+        this.initAmbientAudio();
         this.bindings();
     },
 
@@ -30,44 +32,49 @@ export default {
         }
     },
 
+    initAmbientAudio: function() {
+        if (!ambientLoaded) {
+            ambientAudio.push(new Howl({
+              src: ['http://interactive.guim.co.uk/2015/07/watchman-audio/v2/1-train-interior.mp3'],
+              volume: 0,
+              loop:true
+            }));
+
+            ambientAudio.push(new Howl({
+              src: ['http://interactive.guim.co.uk/2015/07/watchman-audio/v2/2-train-interior.mp3'],
+              volume: 0,
+              loop:true
+            }));
+
+            ambientAudio.push(new Howl({
+              src: ['http://interactive.guim.co.uk/2015/07/watchman-audio/v2/2-train-exterior.mp3'],
+              volume: 0,
+              loop:true
+            }));
+
+            ambientAudio.push(new Howl({
+              src: ['http://interactive.guim.co.uk/2015/07/watchman-audio/v2/3-car-interior.mp3'],
+              volume: 0,
+              loop:true
+            }));
+            ambientLoaded = true;
+            ambientAudio[ambientTrack].play();
+            ambientAudio[ambientTrack].fade(0, 0.8, 4000);
+        }
+    },
+
     toggleAmbientAudio: function() {
-        muted = !muted;
         ambientPlaying = !ambientPlaying;
 
-        if (muted) {
-            $('.ambient__icon--off').css('display','block');
-            $('.ambient__icon--on').css('display','none');
-        } else {
+        if (ambientPlaying) {
+            ambientAudio[ambientTrack].play();
+            ambientAudio[ambientTrack].fade(0, 0.8, 4000);
             $('.ambient__icon--off').css('display','none');
             $('.ambient__icon--on').css('display','block');
-        }
-
-        if (ambientPlaying) {
-            if (!voiceLoaded) {
-                ambientAudio.push(new Howl({
-                  src: ['http://interactive.guim.co.uk/2015/07/watchman-audio/v2/1-train-interior.mp3'],
-                  volume: 0,
-                  loop:true
-                }));
-
-                ambientAudio.push(new Howl({
-                  src: ['http://interactive.guim.co.uk/2015/07/watchman-audio/v2/2-train-interior.mp3'],
-                  volume: 0,
-                  loop:true
-                }));
-
-                ambientAudio.push(new Howl({
-                  src: ['http://interactive.guim.co.uk/2015/07/watchman-audio/v2/2-train-exterior.mp3'],
-                  volume: 0,
-                  loop:true
-                }));
-
-                ambientAudio.push(new Howl({
-                  src: ['http://interactive.guim.co.uk/2015/07/watchman-audio/v2/3-car-interior.mp3'],
-                  volume: 0,
-                  loop:true
-                }));
-            }
+        } else {
+            ambientAudio[ambientTrack].fade(0.8, 0, 2000);
+            $('.ambient__icon--off').css('display','block');
+            $('.ambient__icon--on').css('display','none');
         }
     },
 
