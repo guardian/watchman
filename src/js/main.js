@@ -3,5 +3,7 @@ import jquery from 'jquery';
 window.$ = jquery;
 
 import share from './modules/share.js';
+import audio from './modules/audio.js';
 
 share.init();
+audio.init();
