@@ -1,9 +1,11 @@
 node_modules/
-components/
 bower_components/
-build/
-temp/
+.build/
+.deploy/
+.local/
+yarn.lock
 .DS_Store
 .sass-cache/
-aws-keys.json
+keys.json
+npm-debug.log
 src/assets/*.mp3
