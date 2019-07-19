@@ -177,7 +177,8 @@
     background-position-y: bottom;
     background-repeat: repeat-x;
 }
-.activeAnimation .window-layer {
+
+.window-layer {
     animation: slide 60s linear infinite;
     will-change: transform;
 }
@@ -217,7 +218,7 @@
     }
 }
 
-.activeAnimation .window-outside--1 {
+.window-outside--1 {
     .window-layer--bg {
         animation-duration: 100s;
     }
@@ -265,7 +266,7 @@
     }
 }
 
-.activeAnimation .window-outside--2 {
+.window-outside--2 {
     .window-layer--bg {
         @include animateWindow(4358px);
         bottom: -90px;
@@ -299,7 +300,7 @@
     }
 }
 
-.activeAnimation .window-outside--4 {
+.window-outside--4 {
     bottom: 25%;
 
     .window-layer--bg {

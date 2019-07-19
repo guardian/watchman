@@ -92,28 +92,26 @@
 }
 
 // Animations
-.activeAnimation{
-    .header-scene__layer-1 {
-        animation: headerLayers 12s infinite linear;
-    }
-    .header-scene__layer-2 {
-        animation: headerLayers 8s infinite linear;
-    }
-    .header-scene__dust {
-        animation: dust 0.7s infinite linear;
-    }
-    .header-scene__dust-2 {
-        animation: dust 0.7s infinite linear;
-    }
-    .header-scene__track {
-        animation: track 3s infinite linear;
-    }
-    .train {
-        animation: trainWobble 8s infinite cubic-bezier(0.01, 0.54, 0.87, 0.27);
-    }
-    .header-scene__train__wheels .train__wheel {
-        animation: wheels 4s infinite linear;
-    }
+.header-scene__layer-1 {
+    animation: headerLayers 12s infinite linear;
+}
+.header-scene__layer-2 {
+    animation: headerLayers 8s infinite linear;
+}
+.header-scene__dust {
+    animation: dust 0.7s infinite linear;
+}
+.header-scene__dust-2 {
+    animation: dust 0.7s infinite linear;
+}
+.header-scene__track {
+    animation: track 3s infinite linear;
+}
+.train {
+    animation: trainWobble 8s infinite cubic-bezier(0.01, 0.54, 0.87, 0.27);
+}
+.header-scene__train__wheels .train__wheel {
+    animation: wheels 4s infinite linear;
 }
 
 .header-scene__layer-1 {

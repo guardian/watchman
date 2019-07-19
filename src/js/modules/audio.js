@@ -1,6 +1,6 @@
 import {Howler, Howl} from 'howler';
 
-let ambientPlaying = true,
+let ambientPlaying = false,
     ambientLoaded = false,
     ambientAudio = [],
     ambientTrack = 0,
@@ -11,8 +11,8 @@ let ambientPlaying = true,
 export default {
     init: function() {
         this.muteOnMobile();
-        this.initAmbientAudio();
         this.bindings();
+        this.initAmbientAudio();
     },
 
     bindings: function() {
@@ -27,7 +27,7 @@ export default {
 
     muteOnMobile: function() {
         if((/Android|iPhone|iPad|iPod|BlackBerry|Windows Phone/i).test(navigator.userAgent || navigator.vendor || window.opera) && window.innerWidth < 980){
-            muted = true;
+            ambientPlaying = false;
         }
     },
 
@@ -36,7 +36,7 @@ export default {
             ambientAudio.push(new Howl({
               src: ['http://interactive.guim.co.uk/2015/07/watchman-audio/v2/1-train-interior.mp3'],
               volume: 0,
-              loop:true
+              loop: true
             }));
 
             ambientAudio.push(new Howl({
@@ -50,9 +50,8 @@ export default {
               volume: 0,
               loop:true
             }));
+
             ambientLoaded = true;
-            ambientAudio[ambientTrack].play();
-            ambientAudio[ambientTrack].fade(0, 0.8, 4000);
         }
     },
 
@@ -72,14 +71,17 @@ export default {
     },
 
     switchAmbientAudio: function(newTrack) {
-        if (ambientPlaying) {
-            ambientAudio[newTrack].play();
-            ambientAudio[newTrack].fade(0, 0.8, 4000);
-            ambientAudio[ambientTrack].fade(0.8, 0, 4000, function() {
-                ambientAudio[ambientTrack].pause();
-            });
-
+        if (ambientPlaying && newTrack !== ambientTrack) {
+            const oldTrack = ambientTrack;
             ambientTrack = newTrack;
+
+            ambientAudio[ambientTrack].play();
+            ambientAudio[ambientTrack].fade(0, 0.8, 4000);
+
+            ambientAudio[oldTrack].fade(0.8, 0, 4000);
+            setTimeout(function() {
+                ambientAudio[oldTrack].pause();
+            }, 4000);
         }
     },
 
