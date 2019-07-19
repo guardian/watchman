@@ -1,7 +1,6 @@
 import {Howler, Howl} from 'howler';
 
-let muted = false,
-    ambientPlaying = true,
+let ambientPlaying = true,
     ambientLoaded = false,
     ambientAudio = [],
     ambientTrack = 0,
@@ -36,12 +35,6 @@ export default {
         if (!ambientLoaded) {
             ambientAudio.push(new Howl({
               src: ['http://interactive.guim.co.uk/2015/07/watchman-audio/v2/1-train-interior.mp3'],
-              volume: 0,
-              loop:true
-            }));
-
-            ambientAudio.push(new Howl({
-              src: ['http://interactive.guim.co.uk/2015/07/watchman-audio/v2/2-train-interior.mp3'],
               volume: 0,
               loop:true
             }));
@@ -110,8 +103,6 @@ export default {
             $('.watchman__menu-segment--ambient').addClass('voiceoverplaying')
             voiceoverAudio.play();
             voiceoverLoaded = true;
-            muted = true;
-            // scrollutils.muteSwitch(muted);
         } else {
             $('.audiobook__icon--play').css('display','block')
             $('.audiobook__icon--pause').css('display','none')
