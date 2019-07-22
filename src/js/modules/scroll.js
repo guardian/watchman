@@ -51,7 +51,7 @@ export default {
         $('.watchman__window').removeClass('is-fixed is-above');
 
         $('.watchman__window').each(function(i, el) {
-            windowPositions.push($(el).offset().top);
+            windowPositions.push($(el).offset().top - 24)
         });
     },
 
@@ -60,7 +60,7 @@ export default {
             var $window = $(el);
             var $container = $(el).parent().parent();
             var isInView = scrollTop > windowPositions[i];
-            var isAboveView = $container.height() + $container.offset().top - $window.height() < scrollTop;
+            var isAboveView = $container.height() + $container.offset().top - $window.height() - 48 < scrollTop;
 
             if (isAboveView) {
                 $window.removeClass('is-fixed').addClass('is-above');
