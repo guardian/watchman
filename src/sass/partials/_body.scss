@@ -137,6 +137,11 @@
     background-repeat:no-repeat;
     background-size: contain;
     z-index: 5;
+
+    .watchman__window--1 &,
+    .watchman__window--2 & {
+        background-image: url('{{ path }}/assets/window.png');
+    }
 }
 
 @keyframes rattle {
