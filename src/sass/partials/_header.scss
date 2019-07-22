@@ -95,21 +95,27 @@
 
 // Animations
 .header-scene__layer-1 {
+    -webkit-backface-visibility: hidden;
     animation: headerLayers 12s infinite linear;
 }
 .header-scene__layer-2 {
+    -webkit-backface-visibility: hidden;
     animation: headerLayers 8s infinite linear;
 }
 .header-scene__dust {
+    -webkit-backface-visibility: hidden;
     animation: dust 0.7s infinite linear;
 }
 .header-scene__dust-2 {
+    -webkit-backface-visibility: hidden;
     animation: dust 0.7s infinite linear;
 }
 .header-scene__track {
+    -webkit-backface-visibility: hidden;
     animation: track 3s infinite linear;
 }
 .train {
+    -webkit-backface-visibility: hidden;
     animation: trainWobble 8s infinite cubic-bezier(0.01, 0.54, 0.87, 0.27);
 }
 .header-scene__train__wheels .train__wheel {

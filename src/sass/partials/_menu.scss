@@ -121,33 +121,36 @@
 .content--interactive .social--top{
     padding-top:0;
 }
-@media(min-width:420px){
-    .watchman__menu-segment--ambient,
-    .watchman__menu-segment--share{
-        margin-left:70px;
-        margin-top:0;
-        margin-bottom:20px;
-        &:before{
-            display:block;
-        }
-        h3{
-            display:inline-block;
-            font-size:16px;
-            margin-bottom:0.4375em;
-        }
+
+.watchman__menu-segment--ambient,
+.watchman__menu-segment--share{
+    margin-left:70px;
+    margin-top:0;
+    margin-bottom:20px;
+    &:before{
+        display:block;
     }
-    .watchman__menu-segment--ambient{
-        margin-left:20px;
-    }
-    .watchman__menu-segment--share{
-        clear:both;
+    h3{
+        display:inline-block;
+        font-size:16px;
+        margin-bottom:0.4375em;
     }
 }
+
+.watchman__menu-segment--ambient{
+    margin-left:20px;
+}
+
+.watchman__menu-segment--share{
+    clear:both;
+}
+
 @include mq(tablet){
     .watchman__menu-segment--share{
         margin-left:20px;
         clear:none;
     }
+
     .watchman__menu-segment--ambient,
     .watchman__menu-segment--share{
         width:120px;
@@ -156,6 +159,7 @@
         }
     }
 }
+
 @include mq(desktop){
     .watchman__menu-segment--ambient,
     .watchman__menu-segment--share{
@@ -173,7 +177,6 @@
 .watchman__menu-social {
     padding-bottom: 0 !important;
 }
-
 
 .ambient__button {
     position: relative;
