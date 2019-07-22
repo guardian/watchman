@@ -82,16 +82,20 @@
     }
 
     .initial-letter {
+        font-family: 'Guardian Egyptian Web';
+        font-weight: 600;
+        color: $c-dark-brown;
         font-size: 6.0em;
         line-height: 1em;
         float: left;
         display: block;
-        margin-top: 1px;
+        margin-top: -9px;
         margin-bottom: -24px;
         margin-right: 4px;
 
         @include mq(tablet) {
             font-size: 7em;
+            margin-top: -13px;
         }
     }
 }

@@ -1,9 +1,9 @@
 .watchman__menu {
-    background-color: $c-brown;
+    background-color: $c-dark-brown;
 
     .uit-container {
         overflow: auto;
-        border-color: $c-white;
+        border-color: rgba($c-white, 0.2);
     }
 }
 
@@ -93,7 +93,6 @@
 .watchman__menu-segment--ambient,
 .watchman__menu-segment--share {
     position: relative;
-    // margin-left: 20px;
     margin-left:58px;
 
     &:before {
@@ -103,7 +102,7 @@
         left: -10px;
         top: 0;
         bottom: 0;
-        background-color: $c-white;
+        background-color: rgba($c-white, 0.2);
         display:none;
     }
 }
@@ -168,7 +167,7 @@
 }
 
 .watchman__menu-segment--ambient.voiceoverplaying{
-    display:none;
+    display: none;
 }
 
 .watchman__menu-social {
