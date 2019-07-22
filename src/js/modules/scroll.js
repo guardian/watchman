@@ -16,6 +16,12 @@ export default {
             this.setValues();
             this.onScroll();
         }.bind(this))
+
+        $(window).resize(function() {
+            this.setValues();
+            this.saveWindowPositions();
+            this.onScroll();
+        }.bind(this));
     },
 
     setValues: function() {
