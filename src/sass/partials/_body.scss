@@ -91,10 +91,9 @@
     margin: 30px 0;
 
     @include mq($until: desktop) {
-        // importants to override Skrollr inline styles
-        position: relative !important;
-        top: 0 !important;
-        display: block !important;
+        position: relative;
+        top: 0;
+        display: block;
         padding-bottom: 73%;
     }
 
@@ -108,14 +107,16 @@
         padding-bottom: 0;
         top: 0;
         left: 50%;
-    }
 
-/*
-    @include mq(leftCol) {
-        width: 545px;
-        height: 390px;
+        &.is-fixed {
+            position: fixed;
+        }
+
+        &.is-above {
+            top: auto;
+            bottom: 0;
+        }
     }
-*/
 }
 
 .watchman__window--outside {
