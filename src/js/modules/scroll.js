@@ -48,6 +48,8 @@ export default {
     },
 
     saveWindowPositions: function() {
+        windowPositions = [];
+
         $('.watchman__window').removeClass('is-fixed is-above');
 
         $('.watchman__window').each(function(i, el) {

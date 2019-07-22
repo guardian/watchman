@@ -27,11 +27,6 @@
     }
 
     &:hover {
-        background-color: $c-red;
-        border-color: $c-red;
-
-        .uit-icon {
-            fill: $c-white;
-        }
+        opacity: 0.8;
     }
 }

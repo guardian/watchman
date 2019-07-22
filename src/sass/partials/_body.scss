@@ -48,10 +48,14 @@
         text-indent: 2em;
 
         &.initial-paragraph {
-            font-size: 1.375em;
+            font-size: 20px;
             line-height: 1.4;
             padding-top: 0;
             text-indent: 0;
+
+            @include mq(tablet) {
+                font-size: 24px;
+            }
         }
 
         &.bookshop-paragraph,
@@ -78,13 +82,17 @@
     }
 
     .initial-letter {
-        font-size: 6.6em;
+        font-size: 6.0em;
         line-height: 1em;
         float: left;
         display: block;
         margin-top: 1px;
         margin-bottom: -24px;
         margin-right: 4px;
+
+        @include mq(tablet) {
+            font-size: 7em;
+        }
     }
 }
 

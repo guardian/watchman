@@ -1,6 +1,6 @@
 .uit-related {
     position: relative;
-    background-color: $c-white;
+    background-color: $c-background;
 
     .uit-container {
         padding-bottom: 24px;
@@ -79,7 +79,7 @@
     border-top: 1px solid $c-red;
     width: calc(50% - 10px);
     margin-bottom: 12px;
-    background-color: $c-off-white;
+    background-color: $c-white;
     text-decoration: none;
 
     @include mq(tablet) {
@@ -88,7 +88,7 @@
 
     &:hover {
         text-decoration: none;
-        background-color: $c-light-grey;
+        background-color: $c-off-white;
     }
 }
 
