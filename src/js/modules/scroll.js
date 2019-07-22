@@ -32,6 +32,7 @@ export default {
     onScroll: function() {
         this.audioTriggers();
         this.windows();
+        this.dividerTransforms();
     },
 
     audioTriggers: function() {
@@ -69,5 +70,25 @@ export default {
                 $window.removeClass('is-fixed is-above');
             }
         })
+    },
+
+    dividerTransforms: function() {
+        $('.is-transformable').each(function(i, el) {
+            var $parent = $(el).parent();
+            var start = $parent.offset().top - height;
+            var end = $parent.offset().top + $parent.outerHeight();
+
+            if (scrollTop > start && scrollTop < end) {
+                var startValues = $(el).data('start').split(',');
+                var endValues = $(el).data('end').split(',');
+                var unit = $(el).data('unit') || 'px';
+                var percentage = (end - scrollTop) / (height + $parent.outerHeight()) * 100;
+
+                var xDifferencePoint = (startValues[0] - endValues[0]) / 100;
+                var yDifferencePoint = (startValues[1] - endValues[1]) / 100;
+
+                $(el).css("transform", `translate(${xDifferencePoint * percentage}${unit}, ${yDifferencePoint * percentage}${unit})`)
+            }
+        });
     }
 };
