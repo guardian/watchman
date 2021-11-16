@@ -38,7 +38,7 @@
     },
     "homepage": "https://github.com/guardian/podcards#readme",
     "devDependencies": {
-        "aws-sdk": "^2.5.0",
+        "aws-sdk": "^2.814.0",
         "browser-sync": "^2.24.6",
         "browser-sync-reuse-tab": "^1.0.3",
         "deasync": "^0.1.9",
